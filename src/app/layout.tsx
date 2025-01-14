@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
-import { Layout, FixedPlugin } from "@/components";
+import { Layout, FixedPlugin, Navbar, Footer } from "@/components";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -39,7 +39,16 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <Layout>
-          {children}
+          <Navbar />
+          <div className="relative min-h-screen w-full">
+            <header className="grid !min-h-[30rem] bg-gradient-to-t from-white to to-blue-600 px-8">
+              <div className="container mx-auto mt-5 grid h-full w-full grid-cols-1 place-items-center pt-14">
+                {children}
+              </div>
+            </header>
+          </div>
+
+          <Footer />
           <FixedPlugin />
         </Layout>
       </body>

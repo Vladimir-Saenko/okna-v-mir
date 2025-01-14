@@ -1,12 +1,12 @@
-import { Navbar, Footer } from "@/components";
+// import { Navbar, Footer } from "@/components";
 import Hero from "./hero";
 
 export default function Home() {
   return (
     <>
-      <Navbar />
+      {/* <Navbar /> */}
       <Hero />
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 }
