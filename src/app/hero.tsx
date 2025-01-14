@@ -6,8 +6,8 @@ import Image from "next/image";
 function Hero() {
   return (
     <div className="relative min-h-screen w-full">
-      <header className="grid !min-h-[40rem] bg-gradient-to-t from-blue-200 to to-blue-600 px-8 bg">
-        <div className="container mx-auto mt-24 grid h-full w-full grid-cols-1 place-items-center lg:mt-14">
+      <header className="grid !min-h-[40rem] bg-gradient-to-t from-blue-200 to to-blue-600 px-8">
+        <div className="container mx-auto mt-5 grid h-full w-full grid-cols-1 place-items-center lg:mt-5">
           <div className="col-span-1">
             <Image
               width={1000}

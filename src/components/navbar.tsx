@@ -69,7 +69,7 @@ export function Navbar() {
       <div className="container mx-auto flex items-center justify-between">
         <Image
           width={100}
-          height={100}
+          height={80}
           src={`/logos/my-logo-1-${isScrolling ? "2" : "1"}.png`}
           alt="logo"
         />
@@ -83,7 +83,19 @@ export function Navbar() {
           <NavItem>О нас</NavItem>
           <NavItem>Контакты</NavItem>
         </ul>
-        <div className="hidden gap-2 lg:flex lg:items-center">
+
+        <div className="gap-2 flex items-center">
+          <Typography
+            as="a"
+            href={"tel:+70000000000"}
+            target={"_blank"}
+            variant="small"
+            color={isScrolling ? "gray" : "white"}
+            className="font-medium text-lg"
+          >
+            <i className="fa-solid fa-phone-volume text-xl"></i>{" "}
+            +7(000)000-00-00
+          </Typography>
           <IconButton
             variant="text"
             color={isScrolling ? "gray" : "white"}
@@ -110,7 +122,7 @@ export function Navbar() {
           variant="text"
           color={isScrolling ? "gray" : "white"}
           onClick={handleOpen}
-          className="ml-auto inline-block lg:hidden"
+          className="inline-block lg:hidden"
         >
           {open ? (
             <XMarkIcon strokeWidth={2} className="h-6 w-6" />
@@ -126,17 +138,6 @@ export function Navbar() {
             <NavItem>О нас</NavItem>
             <NavItem>Контакты</NavItem>
           </ul>
-          <div className="mt-4 flex items-center gap-2">
-            <IconButton variant="text" color="gray" size="sm">
-              <i className="fa-brands fa-telegram text-2xl" />
-            </IconButton>
-            <IconButton variant="text" color="gray" size="sm">
-              <i className="fa-brands fa-whatsapp text-2xl" />
-            </IconButton>
-            <IconButton variant="text" color="gray" size="sm">
-              <i className="fa-brands fa-viber text-2xl" />
-            </IconButton>
-          </div>
         </div>
       </Collapse>
     </MTNavbar>
