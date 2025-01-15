@@ -120,13 +120,13 @@ export function Navbar() {
               <i className="fa-brands fa-whatsapp text-2xl" />
             </IconButton>
           </a>
-          <IconButton
+          {/* <IconButton
             variant="text"
             color={isScrolling ? "gray" : "white"}
             size="sm"
           >
             <i className="fa-brands fa-viber text-2xl" />
-          </IconButton>
+          </IconButton> */}
         </div>
         <IconButton
           variant="text"

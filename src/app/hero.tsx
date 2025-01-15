@@ -1,29 +1,34 @@
 "use client";
 
 import Image from "next/image";
-// import { Typography } from "@material-tailwind/react";
+import { Typography } from "@material-tailwind/react";
 
 function Hero() {
   return (
-    // <div className="relative min-h-screen w-full">
-    //   <header className="grid !min-h-[40rem] bg-gradient-to-t from-blue-200 to to-blue-600 px-8">
-    //     <div className="container mx-auto mt-5 grid h-full w-full grid-cols-1 place-items-center lg:mt-5">
-    <div className="col-span-1">
-      <Image
-        width={1000}
-        height={500}
-        src={"/images/z_window.jpg"}
-        alt="window"
-      />
+    <div className="flex w-[100%]">
+      <div className="mb-3 mt-3 text-left [text-shadow:_0_2px_4px_rgb(0_0_0_/_0.75)] absolute ml-4 z-10 max-w-[40%]">
+        <Typography variant="h2" color="white">
+          Установка пластиковых окон
+        </Typography>
+        <Typography variant="h4" color="white">
+          Качественно, надежно, с гарантией.
+        </Typography>
+      </div>
+      <div className="ml-auto ">
+        <Image
+          width={1000}
+          height={500}
+          src={"/images/z_window_gradient.png"}
+          alt="window"
+        />
+      </div>
     </div>
     //   </div>
     // </header>
     // </div>
     /* <div className="mx-8 lg:mx-16 -mt-24 rounded-xl bg-white p-5 md:p-14 shadow-md">
         <div>
-          <Typography variant="h3" color="blue-gray" className="mb-3">
-            Learning App
-          </Typography>
+          
           <Typography
             variant="paragraph"
             className="font-normal !text-gray-500 lg:w-5/12"

@@ -40,6 +40,7 @@ export default function RootLayout({
       >
         <Layout>
           <Navbar />
+
           <div className="relative min-h-screen w-full">
             <header className="grid !min-h-[30rem] bg-gradient-to-t from-white to to-blue-600 px-8">
               <div className="container mx-auto mt-5 grid h-full w-full grid-cols-1 place-items-center pt-14">
