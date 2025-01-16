@@ -1,19 +1,19 @@
 import type { Metadata } from "next";
-import { Play } from "next/font/google";
+import { Oswald, Play } from "next/font/google";
 import "./globals.css";
 
 import { Layout, FixedPlugin, Navbar, Footer } from "@/components";
 
-// const oswald = Oswald({
-//   subsets: ["latin", "cyrillic"],
-//   weight: ["200", "300", "400", "500", "700"],
-//   variable: "--font-oswald",
-// });
+const oswald = Oswald({
+  weight: ["200", "300", "400", "500", "600", "700"],
+  variable: "--font-oswald",
+  subsets: ["latin", "cyrillic"],
+});
 
 const play = Play({
   weight: ["400", "700"],
-  subsets: ["latin", "cyrillic"],
   variable: "--font-play",
+  subsets: ["latin", "cyrillic"],
 });
 
 export const metadata: Metadata = {
@@ -37,7 +37,7 @@ export default function RootLayout({
           referrerPolicy="no-referrer"
         />
       </head>
-      <body className={`font-sans ${play.variable}`}>
+      <body className={`${oswald.variable} ${play.variable} antialiased`}>
         <Layout>
           <Navbar />
 

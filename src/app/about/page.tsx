@@ -1,7 +1,9 @@
 export default function Page() {
   return (
     <>
-      <p>Какой-то контент</p>
+      <h2 className="font-[family-name:var(--font-oswald)]">
+        Какой-то контент
+      </h2>
     </>
   );
 }

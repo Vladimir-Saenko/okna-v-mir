@@ -9,6 +9,8 @@ import {
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import Image from "next/image";
 
+const darkShadow: string = "[text-shadow:_0_2px_4px_rgb(0_0_0_/_0.5)]";
+
 interface NavItemProps {
   children: React.ReactNode;
   href?: string;
@@ -22,7 +24,7 @@ function NavItem({ children, href, target }: NavItemProps) {
         href={href || "#"}
         target={target || "_blank"}
         variant="small"
-        className="font-medium text-lg "
+        className={`font-medium text-lg font-[family-name:var(--font-play)] ${darkShadow}`}
       >
         {children}
       </Typography>
@@ -93,31 +95,32 @@ export function Navbar() {
             href={"tel:+70000000000"}
             target={"_blank"}
             variant="small"
-            color={isScrolling ? "gray" : "white"}
-            className="font-medium text-lg"
+            className={`font-medium text-lg font-[family-name:var(--font-play)] ${darkShadow} ${
+              isScrolling ? "text-gray-900" : "text-white"
+            }`}
           >
             <i className="fa-solid fa-phone-volume text-xl"></i>{" "}
             +7(000)000-00-00
           </Typography>
           <a href="https://t.me/+70000000000" target="_blank">
-            <IconButton
-              variant="text"
-              color={isScrolling ? "gray" : "white"}
-              size="sm"
-            >
-              <i className="fa-brands fa-telegram text-2xl" />
+            <IconButton variant="text" size="sm">
+              <i
+                className={`fa-brands fa-telegram text-2xl ${darkShadow} ${
+                  isScrolling ? "text-gray-900" : "text-white"
+                }`}
+              />
             </IconButton>
           </a>
           <a
             href="https://api.whatsapp.com/send?phone=70000000000"
             target="_blank"
           >
-            <IconButton
-              variant="text"
-              color={isScrolling ? "gray" : "white"}
-              size="sm"
-            >
-              <i className="fa-brands fa-whatsapp text-2xl" />
+            <IconButton variant="text" size="sm">
+              <i
+                className={`fa-brands fa-whatsapp text-2xl ${darkShadow} ${
+                  isScrolling ? "text-gray-900" : "text-white"
+                }`}
+              />
             </IconButton>
           </a>
           {/* <IconButton

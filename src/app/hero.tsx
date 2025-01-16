@@ -3,29 +3,45 @@
 import Image from "next/image";
 import { Typography } from "@material-tailwind/react";
 
+const bottomBlockStyle: string =
+  "w-72 h-32 bg-gradient-to-b from-white to-blue-50 rounded-lg shadow-md opacity-80 px-5 py-4 text-center";
+const defaultFont: string = "font-[family-name:var(--font-play)]";
+
 function Hero() {
   return (
-    <div className="flex w-[100%]">
-      <div className="mb-3 mt-3 text-left [text-shadow:_0_2px_4px_rgb(0_0_0_/_0.75)] absolute ml-4 z-10 max-w-[40%] font-normal ">
-        <Typography variant="h2" color="white">
-          Установка пластиковых окон
-        </Typography>
-        <Typography variant="h2" color="white">
-          Install plasic windows
-        </Typography>
-        <Typography variant="h4" color="white">
-          Качественно, надежно, с гарантией.
-        </Typography>
+    <>
+      <div className="flex w-[100%]">
+        <div className="mb-3 mt-3 text-left [text-shadow:_0_2px_4px_rgb(0_0_0_/_0.75)] absolute ml-4 z-10 max-w-[40%] font-normal">
+          <Typography variant="h2" color="white" className={`${defaultFont}`}>
+            Установка пластиковых окон
+          </Typography>
+          <Typography variant="h4" color="white" className={`${defaultFont}`}>
+            Качественно, надежно, с гарантией.
+          </Typography>
+        </div>
+        <div className="ml-auto">
+          <Image
+            width={1000}
+            height={500}
+            src={"/images/z_window_gradient.png"}
+            alt="window"
+            className="rounded-r-xl"
+          />
+        </div>
       </div>
-      <div className="ml-auto ">
-        <Image
-          width={1000}
-          height={500}
-          src={"/images/z_window_gradient.png"}
-          alt="window"
-        />
+      <div className="flex flex-wrap flex-row gap-6 justify-center px-4 lg:mt-[-12rem] mt-[-10rem] w-[100%] z-5">
+        <div className={`${bottomBlockStyle} ${defaultFont}`}>
+          <p className="[text-shadow:_0_2px_4px_rgb(30_136_229_/_0.7)]">
+            Установка окон и дверей от 5-ти дней с момента офорления заказа
+          </p>
+        </div>
+        <div className={`${bottomBlockStyle} ${defaultFont}`}>
+          <p className="[text-shadow:_0_2px_4px_rgb(30_136_229_/_0.7)]">
+            Используем только качественные комплектующие и расходные материалы
+          </p>
+        </div>
       </div>
-    </div>
+    </>
 
     //   </div>
     // </header>
