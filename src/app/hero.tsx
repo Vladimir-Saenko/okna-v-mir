@@ -6,9 +6,12 @@ import { Typography } from "@material-tailwind/react";
 function Hero() {
   return (
     <div className="flex w-[100%]">
-      <div className="mb-3 mt-3 text-left [text-shadow:_0_2px_4px_rgb(0_0_0_/_0.75)] absolute ml-4 z-10 max-w-[40%]">
+      <div className="mb-3 mt-3 text-left [text-shadow:_0_2px_4px_rgb(0_0_0_/_0.75)] absolute ml-4 z-10 max-w-[40%] font-normal ">
         <Typography variant="h2" color="white">
           Установка пластиковых окон
+        </Typography>
+        <Typography variant="h2" color="white">
+          Install plasic windows
         </Typography>
         <Typography variant="h4" color="white">
           Качественно, надежно, с гарантией.
@@ -23,6 +26,7 @@ function Hero() {
         />
       </div>
     </div>
+
     //   </div>
     // </header>
     // </div>

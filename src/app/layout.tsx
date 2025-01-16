@@ -1,17 +1,19 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Play } from "next/font/google";
 import "./globals.css";
 
 import { Layout, FixedPlugin, Navbar, Footer } from "@/components";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
+// const oswald = Oswald({
+//   subsets: ["latin", "cyrillic"],
+//   weight: ["200", "300", "400", "500", "700"],
+//   variable: "--font-oswald",
+// });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+const play = Play({
+  weight: ["400", "700"],
+  subsets: ["latin", "cyrillic"],
+  variable: "--font-play",
 });
 
 export const metadata: Metadata = {
@@ -35,9 +37,7 @@ export default function RootLayout({
           referrerPolicy="no-referrer"
         />
       </head>
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      <body className={`font-sans ${play.variable}`}>
         <Layout>
           <Navbar />
 
