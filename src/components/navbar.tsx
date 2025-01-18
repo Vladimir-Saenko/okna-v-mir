@@ -4,12 +4,13 @@ import {
   Collapse,
   IconButton,
   Typography,
-  // Button,
+  Button,
 } from "@material-tailwind/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import Image from "next/image";
 
 const darkShadow: string = "[text-shadow:_0_2px_4px_rgb(0_0_0_/_0.5)]";
+//const hoverDarkShadow: string = "[text-shadow:_0_0_8px_rgb(255_255_255_/_0.8)]";
 
 interface NavItemProps {
   children: React.ReactNode;
@@ -24,7 +25,7 @@ function NavItem({ children, href, target }: NavItemProps) {
         href={href || "#"}
         target={target || "_blank"}
         variant="small"
-        className={`font-medium text-lg font-[family-name:var(--font-play)] ${darkShadow}`}
+        className={`font-medium text-lg font-[family-name:var(--font-play)]`}
       >
         {children}
       </Typography>
@@ -32,8 +33,12 @@ function NavItem({ children, href, target }: NavItemProps) {
   );
 }
 
+function getCallbackForm() {
+  alert("Заказать звонок");
+}
+
 export function Navbar() {
-  const [open, setOpen] = React.useState(false); // Сворачивание верхнего меню при узком экране
+  const [open, setOpen] = React.useState(false); // Открытие меню для узких экранов
   const [isScrolling, setIsScrolling] = React.useState(false); // Прокрутка
 
   function handleOpen() {
@@ -78,9 +83,9 @@ export function Navbar() {
         />
 
         <ul
-          className={`ml-10 hidden items-center gap-6 lg:flex ${
+          className={`ml-10 hidden items-center gap-6 lg:flex ${darkShadow} ${
             isScrolling ? "text-gray-900" : "text-white"
-          }`}
+          } `}
         >
           <NavItem href={"/"} target="_self">
             Главная
@@ -89,20 +94,31 @@ export function Navbar() {
           <NavItem target="_self">Контакты</NavItem>
         </ul>
 
+        <div className="gap-2 items-end hidden lg:flex">
+          <Button
+            variant="outlined"
+            size="sm"
+            onClick={getCallbackForm}
+            color={isScrolling ? "blue" : "white"}
+          >
+            Заказать звонок
+          </Button>
+        </div>
+
         <div className="gap-2 flex items-center">
           <Typography
             as="a"
             href={"tel:+70000000000"}
             target={"_blank"}
             variant="small"
-            className={`font-medium text-lg font-[family-name:var(--font-play)] ${darkShadow} ${
+            className={`flex font-medium mr-2 text-lg font-[family-name:var(--font-play)] ${darkShadow} ${
               isScrolling ? "text-gray-900" : "text-white"
             }`}
           >
-            <i className="fa-solid fa-phone-volume text-xl"></i>{" "}
-            +7(000)000-00-00
+            <i className="fa-solid fa-phone-volume text-xl md:mt-1 mx-1 "></i>
+            <span className={`hidden md:flex`}>{`+7(000)0000-00-00`}</span>
           </Typography>
-          <a href="https://t.me/+70000000000" target="_blank">
+          <a href="https://t.me/+79139511618" target="_blank">
             <IconButton variant="text" size="sm">
               <i
                 className={`fa-brands fa-telegram text-2xl ${darkShadow} ${
@@ -112,7 +128,7 @@ export function Navbar() {
             </IconButton>
           </a>
           <a
-            href="https://api.whatsapp.com/send?phone=70000000000"
+            href="https://api.whatsapp.com/send?phone=79139545830"
             target="_blank"
           >
             <IconButton variant="text" size="sm">
@@ -151,6 +167,13 @@ export function Navbar() {
             <NavItem>О нас</NavItem>
             <NavItem>Контакты</NavItem>
           </ul>
+          <Typography
+            variant="small"
+            className={`font-medium text-blue-gray-900 mt-4 cursor-pointer text-lg font-[family-name:var(--font-play)]`}
+            onClick={getCallbackForm}
+          >
+            Заказать звонок
+          </Typography>
         </div>
       </Collapse>
     </MTNavbar>
