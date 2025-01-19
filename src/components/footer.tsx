@@ -1,6 +1,7 @@
 "use client";
 import Image from "next/image";
 import { Typography, IconButton } from "@material-tailwind/react";
+import Link from "next/link";
 
 // const LINKS = ["About Us", "Careers", "Press", "Blog", "Pricing"];
 const CURRENT_YEAR = new Date().getFullYear();
@@ -10,12 +11,14 @@ export function Footer() {
     <footer className="mt-10 bg-gray-900 px-8 pt-12">
       <div className="container mx-auto">
         <div className="flex flex-wrap justify-center gap-8 md:justify-between">
-          <Image
-            width={250}
-            height={130}
-            src={"/logos/my-logo-1-1.png"}
-            alt="logo"
-          />
+          <Link href={"/"}>
+            <Image
+              width={250}
+              height={130}
+              src={"/logos/my-logo-1-1.png"}
+              alt="logo"
+            />
+          </Link>
           {/* <div className="text-center md:text-left">
             <Typography
               as="a"
