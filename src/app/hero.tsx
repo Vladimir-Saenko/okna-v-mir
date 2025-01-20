@@ -47,14 +47,9 @@ function Hero() {
           </p>
         </div>
       </div>
-    </>
 
-    //   </div>
-    // </header>
-    // </div>
-    /* <div className="mx-8 lg:mx-16 -mt-24 rounded-xl bg-white p-5 md:p-14 shadow-md">
+      {/* <div className="mx-8 lg:mx-16 mt-24 rounded-xl bg-red p-5 md:p-14 shadow-md">
         <div>
-          
           <Typography
             variant="paragraph"
             className="font-normal !text-gray-500 lg:w-5/12"
@@ -64,7 +59,8 @@ function Hero() {
             and language learning to personal development and beyond
           </Typography>
         </div>
-      </div> */
+      </div> */}
+    </>
   );
 }
 export default Hero;

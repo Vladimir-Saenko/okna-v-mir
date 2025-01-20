@@ -3,8 +3,8 @@ import Image from "next/image";
 import { Typography, IconButton } from "@material-tailwind/react";
 import Link from "next/link";
 
-// const LINKS = ["About Us", "Careers", "Press", "Blog", "Pricing"];
 const CURRENT_YEAR = new Date().getFullYear();
+const defaultFont: string = "font-[family-name:var(--font-play)]";
 
 export function Footer() {
   return (
@@ -13,90 +13,67 @@ export function Footer() {
         <div className="flex flex-wrap justify-center gap-8 md:justify-between">
           <Link href={"/"}>
             <Image
-              width={250}
-              height={130}
+              width={160}
+              height={80}
               src={"/logos/my-logo-1-1.png"}
               alt="logo"
             />
           </Link>
-          {/* <div className="text-center md:text-left">
-            <Typography
-              as="a"
-              href="https://www.material-tailwind.com"
-              target="_blank"
-              variant="h5"
-              color="white"
-              className="mb-4"
-            >
-              Material Tailwind
-            </Typography>
-            <Typography color="white" className="mb-12 font-normal">
-              The reward for getting on the stage is fame.
-            </Typography>
-            <ul className="flex flex-wrap items-center justify-center md:justify-start">
-              {LINKS.map((link, idx) => (
-                <li key={link}>
-                  <Typography
-                    as="a"
-                    href="#"
-                    color="white"
-                    className={`py-1 font-medium transition-colors ${
-                      idx === 0 ? "pr-3" : "px-3"
-                    }`}
-                  >
-                    {link}
-                  </Typography>
+          <div className="md:ml-8 flex flex-wrap justify-evenly w-[65%]">
+            {/* Колонка МЕНЮ */}
+            <div>
+              <Typography
+                color="white"
+                className={`text-blue-100 ${defaultFont} text-2xl underline mb-3`}
+              >
+                Меню
+              </Typography>
+              <ul className={`text-gray-50 ${defaultFont} cursor-pointer`}>
+                <li>
+                  <a>Окна</a>
                 </li>
-              ))}
-            </ul>
-          </div> */}
-          {/* <div className="mt-8 w-full md:mt-0 md:w-auto">
-            <Typography variant="h6" color="white" className="mb-3">
-              Get the app
-            </Typography>
-            <div className="flex flex-col gap-2">
-              <Button
-                color="white"
-                className="flex items-center justify-center"
-              >
-                <Image
-                  width={256}
-                  height={256}
-                  src="/logos/logo-apple.png"
-                  className="-mt-0.5 mr-2 h-6 w-6"
-                  alt="ios"
-                />
-                App Store
-              </Button>
-              <Button
-                color="white"
-                className="flex items-center justify-center"
-              >
-                <Image
-                  width={256}
-                  height={256}
-                  src="/logos/logo-google.png"
-                  className="-mt-0.5 mr-2 h-6 w-6"
-                  alt="ios"
-                />
-                Google Play
-              </Button>
+                <li>
+                  <a>Двери</a>
+                </li>
+                <li>
+                  <a>Жалюзи</a>
+                </li>
+                <li>
+                  <a>Рольставни</a>
+                </li>
+              </ul>
             </div>
-          </div> */}
+            {/* Колонка КОНТАКТЫ */}
+            <div>
+              <Typography
+                color="white"
+                className={`text-blue-100 ${defaultFont} text-2xl underline mb-3`}
+              >
+                Контакты
+              </Typography>
+              <ul className={`text-gray-50 ${defaultFont} cursor-pointer`}>
+                <li>
+                  <a>Телефон</a>
+                </li>
+                <li>
+                  <a>Телеграм</a>
+                </li>
+                <li>
+                  <a>Ватсап</a>
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
-        <div className="mt-16 flex flex-wrap items-center justify-center gap-y-4 gap-x-8 border-t border-gray-700 py-7 md:justify-between">
+        <div className="mt-4 flex flex-wrap items-center justify-center gap-y-2 gap-x-8 border-t border-gray-700 py-3 md:justify-between">
           <Typography
             color="white"
-            className="text-center font-normal opacity-75"
+            className={`text-center font-normal ${defaultFont}`}
           >
             &copy; {CURRENT_YEAR > 2025 ? "2025-" : ""}
-            {CURRENT_YEAR} Автор дизайна{" "}
-            <a href="https://www.material-tailwind.com" target="_blank">
-              Material Tailwind
-            </a>{" "}
-            by{" "}
-            <a href="#" target="_blank">
-              Siborg Software
+            {CURRENT_YEAR} Разработка и дизайн{" "}
+            <a href="#" target="_blank" className="underline">
+              Владимир &apos;siborg&apos; Саенко
             </a>
             .
           </Typography>
