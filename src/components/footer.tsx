@@ -15,7 +15,7 @@ export function Footer() {
             <Image
               width={160}
               height={80}
-              src={"/logos/my-logo-1-1.png"}
+              src={"/logos/my-logo-2-1.png"}
               alt="logo"
             />
           </Link>

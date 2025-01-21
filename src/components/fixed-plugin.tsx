@@ -3,7 +3,7 @@
 // import Image from "next/image";
 import React from "react";
 
-import ScrollUp from "./ScrollUp";
+import ScrollUp from "./scroll-up-button";
 
 export function FixedPlugin() {
   const [isScrolling, setIsScrolling] = React.useState(false);

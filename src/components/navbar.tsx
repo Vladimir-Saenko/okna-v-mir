@@ -10,6 +10,8 @@ import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import Image from "next/image";
 import Link from "next/link";
 
+import CallMeButton from "./сall-me-button";
+
 const darkShadow: string = "[text-shadow:_0_2px_4px_rgb(0_0_0_/_0.5)]";
 //const hoverDarkShadow: string = "[text-shadow:_0_0_8px_rgb(255_255_255_/_0.8)]";
 
@@ -80,7 +82,7 @@ export function Navbar() {
           <Image
             width={100}
             height={80}
-            src={`/logos/my-logo-1-${isScrolling ? "2" : "1"}.png`}
+            src={`/logos/my-logo-2-${isScrolling ? "2" : "1"}.png`}
             alt="logo"
           />
         </Link>
@@ -111,6 +113,9 @@ export function Navbar() {
         </div> */}
 
         <div className="gap-2 flex items-center">
+          <div className="hidden xl:flex">
+            <CallMeButton />
+          </div>
           <Typography
             as="a"
             href={"tel:+70000000000"}
