@@ -10,7 +10,7 @@ import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import Image from "next/image";
 import Link from "next/link";
 
-import CallMeButton from "./сall-me-button";
+import CallMe from "./сall-me";
 
 const darkShadow: string = "[text-shadow:_0_2px_4px_rgb(0_0_0_/_0.5)]";
 //const hoverDarkShadow: string = "[text-shadow:_0_0_8px_rgb(255_255_255_/_0.8)]";
@@ -34,10 +34,6 @@ function NavItem({ children, href, target }: NavItemProps) {
       </Typography>
     </li>
   );
-}
-
-function getCallbackForm() {
-  alert("Заказать звонок");
 }
 
 export function Navbar() {
@@ -101,20 +97,9 @@ export function Navbar() {
           <NavItem>Контакты</NavItem>
         </ul>
 
-        {/* <div className="gap-2 items-end hidden lg:flex">
-          <Button
-            variant="outlined"
-            size="sm"
-            onClick={getCallbackForm}
-            color={isScrolling ? "blue" : "white"}
-          >
-            Заказать звонок
-          </Button>
-        </div> */}
-
         <div className="gap-2 flex items-center">
           <div className="hidden xl:flex">
-            <CallMeButton />
+            <CallMe />
           </div>
           <Typography
             as="a"
@@ -149,13 +134,6 @@ export function Navbar() {
               />
             </IconButton>
           </a>
-          {/* <IconButton
-            variant="text"
-            color={isScrolling ? "gray" : "white"}
-            size="sm"
-          >
-            <i className="fa-brands fa-viber text-2xl" />
-          </IconButton> */}
         </div>
         <IconButton
           variant="text"
@@ -178,14 +156,8 @@ export function Navbar() {
             <NavItem>Жалюзи</NavItem>
             <NavItem>Рольставни</NavItem>
             <NavItem>Контакты</NavItem>
+            <CallMe />
           </ul>
-          <Typography
-            variant="small"
-            className={`font-medium text-blue-gray-900 mt-4 cursor-pointer text-lg font-[family-name:var(--font-play)]`}
-            onClick={getCallbackForm}
-          >
-            Заказать звонок
-          </Typography>
         </div>
       </Collapse>
     </MTNavbar>

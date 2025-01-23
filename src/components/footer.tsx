@@ -19,7 +19,7 @@ export function Footer() {
               alt="logo"
             />
           </Link>
-          <div className="md:ml-8 flex flex-wrap justify-evenly w-[65%]">
+          <div className="md:ml-8 flex flex-wrap justify-evenly md:w-[65%] text-xs md:text-base gap-4 md:gap-8">
             {/* Колонка МЕНЮ */}
             <div>
               <Typography
@@ -30,16 +30,36 @@ export function Footer() {
               </Typography>
               <ul className={`text-gray-50 ${defaultFont} cursor-pointer`}>
                 <li>
-                  <a>Окна</a>
+                  <Link
+                    href="/"
+                    className="cursor-pointer hover:underline hover:text-white"
+                  >
+                    Окна
+                  </Link>
                 </li>
                 <li>
-                  <a>Двери</a>
+                  <Link
+                    href="/dveri"
+                    className="cursor-pointer hover:underline hover:text-white"
+                  >
+                    Двери
+                  </Link>
                 </li>
                 <li>
-                  <a>Жалюзи</a>
+                  <Link
+                    href="#"
+                    className="cursor-pointer hover:underline hover:text-white"
+                  >
+                    Жалюзи
+                  </Link>
                 </li>
                 <li>
-                  <a>Рольставни</a>
+                  <Link
+                    href="#"
+                    className="cursor-pointer hover:underline hover:text-white"
+                  >
+                    Рольставни
+                  </Link>
                 </li>
               </ul>
             </div>
@@ -51,15 +71,26 @@ export function Footer() {
               >
                 Контакты
               </Typography>
-              <ul className={`text-gray-50 ${defaultFont} cursor-pointer`}>
+              <ul className={`text-gray-50 ${defaultFont}`}>
                 <li>
-                  <a>Телефон</a>
+                  <a className="cursor-pointer hover:underline hover:text-white">
+                    Телефон
+                  </a>
                 </li>
                 <li>
-                  <a>Телеграм</a>
+                  <a className="cursor-pointer hover:underline hover:text-white">
+                    Телеграм
+                  </a>
                 </li>
                 <li>
-                  <a>Ватсап</a>
+                  <a className="cursor-pointer hover:underline hover:text-white">
+                    Ватсап
+                  </a>
+                </li>
+                <li>
+                  <a className="cursor-pointer hover:underline hover:text-white">
+                    Почта
+                  </a>
                 </li>
               </ul>
             </div>
@@ -68,31 +99,23 @@ export function Footer() {
         <div className="mt-4 flex flex-wrap items-center justify-center gap-y-2 gap-x-8 border-t border-gray-700 py-3 md:justify-between">
           <Typography
             color="white"
-            className={`text-center font-normal ${defaultFont}`}
+            className={`text-center font-light text-xs ${defaultFont}`}
           >
             &copy; {CURRENT_YEAR > 2025 ? "2025-" : ""}
-            {CURRENT_YEAR} Разработка и дизайн{" "}
-            <a href="#" target="_blank" className="underline">
-              Владимир &apos;siborg&apos; Саенко
-            </a>
-            .
+            {CURRENT_YEAR} Разработка и дизайн: Владимир &apos;siborg&apos;
+            Саенко
           </Typography>
 
           <div className="flex gap-2">
             <IconButton variant="text" color="white">
-              <i className="fa-brands fa-twitter text-2xl not-italic opacity-75"></i>
+              <a href="https://github.com/Vladimir-Saenko" target="_blank">
+                <i className="fa-brands fa-github text-xl not-italic opacity-75 hover:opacity-100"></i>
+              </a>
             </IconButton>
             <IconButton variant="text" color="white">
-              <i className="fa-brands fa-linkedin text-2xl not-italic opacity-75"></i>
-            </IconButton>
-            <IconButton variant="text" color="white">
-              <i className="fa-brands fa-facebook text-2xl not-italic opacity-75"></i>
-            </IconButton>
-            <IconButton variant="text" color="white">
-              <i className="fa-brands fa-github text-2xl not-italic opacity-75"></i>
-            </IconButton>
-            <IconButton variant="text" color="white">
-              <i className="fa-brands fa-dribbble text-2xl not-italic opacity-75"></i>
+              <a href="mailto:siborg.451@gmail.com&body=Здравствуйте,%20я%20перешел%20по%20ссылке%20с%20сайта%20&Apos;Окна в Мир&Apos;%0D?subject=Разработка%20сайта">
+                <i className="fa-solid fa-envelope text-xl not-italic opacity-75 hover:opacity-100"></i>
+              </a>
             </IconButton>
           </div>
         </div>
