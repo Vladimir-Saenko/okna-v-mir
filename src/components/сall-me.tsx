@@ -11,14 +11,99 @@ import {
 
 const defaultFont: string = "font-[family-name:var(--font-play)]";
 
+const KEY: string = "4263091d4c2397b3a13fe16d0273b604"; //Ключ адресата для бота pushmebot.ru
+const URL: string = "http://pushmebot.ru/send";
+
 export default function CallMe() {
   const [open, setOpen] = React.useState(false);
 
+  const [name, setName] = React.useState("");
+  const [phone, setPhone] = React.useState("");
+  const [time, setTime] = React.useState("08:00 - 20:00");
+  const [comment, setComment] = React.useState("");
+
   const handleOpen = () => setOpen(!open);
+
+  // function PushMessage(): void {
+
+  //   const message: string = `Запрос на звонок с сайта Окна в Мир\nDИмя: ${name}\nDТелефон: +7${phone}\nDВремя: ${time}/nDКомментарий: ${comment}`;
+
+  //   fetch(`${URL}?key=${KEY}&message=${message}`, {
+  //     method: "POST",
+  //     headers: {
+  //       "Content-Type": "application/json",
+  //     },
+  //     mode: "no-cors",
+  //   })
+  //     .then((response) => {
+  //       if (!response.ok) {
+  //         throw response;
+  //       }
+  //       return response.json();
+  //     })
+  //     .then((data) => console.log(data))
+  //     .catch(function (error) {
+  //       console.log(error);
+  //     });
+
+  // const asyncPostCall = async () => {
+  //   try {
+  //     const response = await fetch(`${URL}?key=${KEY}&message=${message}`, {
+  //       method: "POST",
+  //       mode: "no-cors",
+  //     });
+  //     const { ok, status } = await response.json();
+  //     // enter you logic when the fetch is successful
+  //     console.log(`ok: ${ok}, status: ${status}`);
+  //   } catch (error) {
+  //     // enter your logic for when there is an error (ex. error toast)
+
+  //     console.log(error);
+  //   }
+  // };
+
+  // asyncPostCall();
+  // }
+
+  //   const {} = await fetch(URL, {
+  //     method: "POST",
+  //     headers: { "Content-Type": "application/json" },
+  //     body: JSON.stringify(data),
+  //   })
+  //     .then((res) => res.json)
+  //     .then((data) => console.log("Успешно:", data))
+  //     .catch((error) => console.error("Ошибка:", error));
+  // }
 
   const handleSend = () => {
     setOpen(false);
+
+    const message: string = `Запрос на звонок с сайта Окна в Мир\nDИмя: ${name}\nDТелефон: +7${phone}\nDВремя: ${time}/nDКомментарий: ${comment}`;
+
+    fetch(`${URL}?key=${KEY}&message=${message}`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      mode: "no-cors",
+    })
+      .then((response) => {
+        if (!response.ok) {
+          throw response;
+        }
+        return response.json();
+      })
+      .then((data) => console.log(data))
+      .catch(function (error) {
+        console.log(error);
+      });
   };
+
+  function isValidPhone(phone: string): boolean {
+    const numbers: string = phone.replace(/[^\d]/g, "").slice(1);
+
+    return numbers.length == 10;
+  }
 
   return (
     <>
@@ -72,9 +157,12 @@ export default function CallMe() {
                 Ф.И.О.
               </label>
               <input
+                type="text"
                 id="contactName"
                 className={`${defaultFont} w-full bg-transparent placeholder:text-blue-gray-400 text-blue-gray-900 text-sm border border-gray-400 rounded-md px-3 py-2 focus:outline-none focus:border-gray-900 focus:border-2`}
                 placeholder="Имя ( Отчество Фамилия (необязательно )"
+                required
+                onChange={(event) => setName(event.target.value)}
               />
             </div>
 
@@ -85,11 +173,15 @@ export default function CallMe() {
                 Телефон
               </label>
               <input
+                type="phone"
+                value={phone}
                 id="contactPhone"
                 className={`${defaultFont} w-full bg-transparent placeholder:text-blue-gray-400 text-blue-gray-900 text-sm border border-gray-400 rounded-md px-3 py-2 focus:outline-none focus:border-gray-900 focus:border-2`}
                 placeholder="+7-123-456-7890"
-                pattern="^\+\d{1,3}-\d{1,4}-\d{1,4}-\d{4}$"
-                maxLength={15}
+                pattern="^((8|\+7)[\- ]?)?(\(?\d{3,4}\)?[\- ]?)?[\d\- ]{5,10}$"
+                //maxLength={15}
+                required
+                onChange={(event) => setPhone(event.target.value.toString())}
               />
             </div>
             <div>
@@ -100,7 +192,7 @@ export default function CallMe() {
               </label>
 
               <select
-                placeholder="Выберите удобный интервал"
+                onChange={(e) => setTime(e.target.value)}
                 className={`${defaultFont} w-full bg-transparent text-blue-gray-900 text-sm border border-gray-400 rounded-md px-3 py-2 focus:outline-none focus:border-gray-900 focus:border-2`}
               >
                 <option className={`${defaultFont} text-sm md:text-base`}>
@@ -126,7 +218,11 @@ export default function CallMe() {
                 </option>
               </select>
             </div>
-            <Textarea label="Короткое сообщение (необязательно)" />
+            <Textarea
+              label="Короткое сообщение (необязательно)"
+              onChange={(e) => setComment(e.target.value)}
+              maxLength={100}
+            />
           </div>
         </DialogBody>
         <DialogFooter className="space-x-2">
@@ -142,6 +238,7 @@ export default function CallMe() {
             size="sm"
             className={`${defaultFont} border border-gray-400 hover:border-gray-600 hover:shadow-light-blue-300 hover:shadow-sm bg-blue-500 hover:text-gray-900`}
             onClick={handleSend}
+            disabled={name === "" || !isValidPhone(phone)}
           >
             Отправить
           </Button>
