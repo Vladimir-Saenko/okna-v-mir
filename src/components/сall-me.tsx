@@ -9,10 +9,16 @@ import {
   Typography,
 } from "@material-tailwind/react";
 
-const defaultFont: string = "font-[family-name:var(--font-play)]";
+import { SendToTelegram } from "@/utils";
 
-const KEY: string = "4263091d4c2397b3a13fe16d0273b604"; //Ключ адресата для бота pushmebot.ru
-const URL: string = "http://pushmebot.ru/send";
+interface sendData {
+  name: string;
+  phone: string;
+  time: string;
+  comment: string;
+}
+
+const defaultFont: string = "font-[family-name:var(--font-play)]";
 
 export default function CallMe() {
   const [open, setOpen] = React.useState(false);
@@ -24,85 +30,26 @@ export default function CallMe() {
 
   const handleOpen = () => setOpen(!open);
 
-  // function PushMessage(): void {
-
-  //   const message: string = `Запрос на звонок с сайта Окна в Мир\nDИмя: ${name}\nDТелефон: +7${phone}\nDВремя: ${time}/nDКомментарий: ${comment}`;
-
-  //   fetch(`${URL}?key=${KEY}&message=${message}`, {
-  //     method: "POST",
-  //     headers: {
-  //       "Content-Type": "application/json",
-  //     },
-  //     mode: "no-cors",
-  //   })
-  //     .then((response) => {
-  //       if (!response.ok) {
-  //         throw response;
-  //       }
-  //       return response.json();
-  //     })
-  //     .then((data) => console.log(data))
-  //     .catch(function (error) {
-  //       console.log(error);
-  //     });
-
-  // const asyncPostCall = async () => {
-  //   try {
-  //     const response = await fetch(`${URL}?key=${KEY}&message=${message}`, {
-  //       method: "POST",
-  //       mode: "no-cors",
-  //     });
-  //     const { ok, status } = await response.json();
-  //     // enter you logic when the fetch is successful
-  //     console.log(`ok: ${ok}, status: ${status}`);
-  //   } catch (error) {
-  //     // enter your logic for when there is an error (ex. error toast)
-
-  //     console.log(error);
-  //   }
-  // };
-
-  // asyncPostCall();
-  // }
-
-  //   const {} = await fetch(URL, {
-  //     method: "POST",
-  //     headers: { "Content-Type": "application/json" },
-  //     body: JSON.stringify(data),
-  //   })
-  //     .then((res) => res.json)
-  //     .then((data) => console.log("Успешно:", data))
-  //     .catch((error) => console.error("Ошибка:", error));
-  // }
-
   const handleSend = () => {
     setOpen(false);
 
-    const message: string = `Запрос на звонок с сайта Окна в Мир\nDИмя: ${name}\nDТелефон: +7${phone}\nDВремя: ${time}/nDКомментарий: ${comment}`;
+    const data: sendData = {
+      name,
+      phone,
+      time,
+      comment,
+    };
 
-    fetch(`${URL}?key=${KEY}&message=${message}`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      mode: "no-cors",
-    })
-      .then((response) => {
-        if (!response.ok) {
-          throw response;
-        }
-        return response.json();
-      })
-      .then((data) => console.log(data))
-      .catch(function (error) {
-        console.log(error);
-      });
+    SendToTelegram(data);
   };
 
   function isValidPhone(phone: string): boolean {
-    const numbers: string = phone.replace(/[^\d]/g, "").slice(1);
+    const validBegin = phone.startsWith("+7") || phone.startsWith("8"); //Проверка на российские номера
+    const numbers: string = phone.replace(/[^\d]/g, "").slice(1); //Вырезаем только цифры
 
-    return numbers.length == 10;
+    if (numbers.length != 10 || !validBegin) return false; //Проверяем количество цифр после кода страны и валидность кода страны
+
+    return true;
   }
 
   return (

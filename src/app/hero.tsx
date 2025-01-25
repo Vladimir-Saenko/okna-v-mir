@@ -27,6 +27,7 @@ function Hero() {
           <Image
             width={1000}
             height={500}
+            priority={false}
             src={"/images/z_window_gradient.png"}
             alt="window"
             className="rounded-r-xl"
