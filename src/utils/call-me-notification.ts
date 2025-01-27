@@ -1,5 +1,5 @@
-const KEY: string = "4263091d4c2397b3a13fe16d0273b604"; //Ключ адресата для бота pushmebot.ru
-const URL: string = "http://pushmebot.ru/send"; //Адрес Telegram-бота для оповещений
+import axios from "axios";
+import toast from "react-hot-toast";
 
 interface sendData {
   name: string;
@@ -7,6 +7,10 @@ interface sendData {
   time: string;
   comment: string;
 }
+
+const BOT_TOKEN = process.env.BOT_TOKEN;
+const CHAT_ID = process.env.CHAT_ID;
+const URL_API = `https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`;
 
 function formatPhone(strPhone: string): string {
   const numbers: string = strPhone.replace(/[^\d]/g, "").slice(1);
@@ -20,31 +24,33 @@ function formatPhone(strPhone: string): string {
 }
 
 export function SendToTelegram(data: sendData): void {
-  const message: string = `Запрос на звонок с сайта "Окна в Мир"%0AИмя: ${
-    data.name
-  }%0AТелефон: ${formatPhone(data.phone)}%0AВремя: ${
-    data.time
-  }%0AКомментарий: ${data.comment}`;
+  const message: string =
+    `Запрос на звонок с сайта "Окна в Мир"\n` +
+    `===================================\n` +
+    `Имя: ${data.name}\n` +
+    `Телефон: ${formatPhone(data.phone)}\n` +
+    `Время: ${data.time}\n` +
+    `Комментарий: ${data.comment}`;
 
-  async function postMessage(): Promise<void> {
-    await fetch(`${URL}?key=${KEY}&message=${message}`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      mode: "no-cors",
+  axios
+    .post(URL_API, {
+      chat_id: CHAT_ID,
+      parse_mode: "html",
+      text: message,
     })
-      .then((response) => {
-        if (!response.ok) {
-          throw response;
-        }
-        return response.json();
-      })
-      .then((data) => console.log(data))
-      .catch(function (error) {
-        console.log(error);
-      });
-  }
-
-  postMessage();
+    .then((res) => {
+      if (res.data.ok) {
+        toast.success("Заявка на звонок успешно отправлена 👍\n");
+      } else throw new Error("Не пришел ОК из API");
+    })
+    .catch((err) => {
+      toast.error(
+        "Не удалось отправить заявку. 😕\n" +
+          "Попробуйте еще раз или воспользуйтесь другим способом связаться с нами."
+      );
+      console.log(err);
+    })
+    .finally(() => {
+      console.log("Скрипт выполнен");
+    });
 }

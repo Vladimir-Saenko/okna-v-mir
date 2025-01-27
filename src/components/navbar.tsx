@@ -80,6 +80,7 @@ export function Navbar() {
             height={80}
             src={`/logos/my-logo-2-${isScrolling ? "2" : "1"}.png`}
             alt="logo"
+            className="h-auto"
           />
         </Link>
 
@@ -113,7 +114,7 @@ export function Navbar() {
             <i className="fa-solid fa-phone-volume text-xl md:mt-1 mx-1 "></i>
             <span className={`hidden md:flex`}>{`+7(000)0000-00-00`}</span>
           </Typography>
-          <a href="https://t.me/+79505033068" target="_blank">
+          <a href="https://t.me/+ahyI8x1lNaRmMTIy" target="_blank">
             <IconButton variant="text" size="sm">
               <i
                 className={`fa-brands fa-telegram text-2xl ${darkShadow} ${

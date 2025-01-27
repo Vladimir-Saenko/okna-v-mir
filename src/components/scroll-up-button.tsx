@@ -17,7 +17,6 @@ export function ScrollUp() {
         })
       }
     >
-      {/* &uArr; */}
       <ArrowUpCircleIcon className="size-8" />
     </Button>
   );
