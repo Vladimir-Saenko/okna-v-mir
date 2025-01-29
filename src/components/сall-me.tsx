@@ -18,7 +18,9 @@ interface sendData {
   comment: string;
 }
 
+//styles const
 const defaultFont: string = "font-[family-name:var(--font-play)]";
+const darkShadow: string = "[text-shadow:_0_0_5px_rgb(0_0_0_/_0.4)]";
 
 export default function CallMe() {
   const [open, setOpen] = React.useState(false);
@@ -57,7 +59,7 @@ export default function CallMe() {
       <Button
         color="blue"
         size="sm"
-        className={`${defaultFont} border border-gray-400 hover:border-gray-600 hover:shadow-light-blue-300 hover:shadow-sm bg-blue-500 hover:text-gray-900`}
+        className={`${defaultFont} ${darkShadow} border border-gray-400 hover:border-gray-600 hover:shadow-light-blue-300 hover:shadow-md bg-blue-500 hover:bg-blue-600`}
         onClick={handleOpen}
       >
         Заказать звонок
@@ -68,7 +70,7 @@ export default function CallMe() {
         handler={handleOpen}
         className="bg-gradient-to-t from-white to to-blue-50 overflow-y-scroll md:overflow-auto max-h-[95vh]"
       >
-        <div className="flex items-center justify-between ">
+        <div className="flex items-center justify-between">
           <DialogHeader className="flex flex-col items-start pt-3 pb-1">
             <Typography className={`${defaultFont} text-blue-900`} variant="h4">
               Заказать звонок

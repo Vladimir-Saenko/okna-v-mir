@@ -11,9 +11,13 @@ import Image from "next/image";
 import Link from "next/link";
 
 import CallMe from "./сall-me";
+import { formatPhone } from "@/utils";
 
 const darkShadow: string = "[text-shadow:_0_2px_4px_rgb(0_0_0_/_0.5)]";
 //const hoverDarkShadow: string = "[text-shadow:_0_0_8px_rgb(255_255_255_/_0.8)]";
+
+const PHONE: string = process.env.PHONE_NUMBER || "+7-000-000-0000";
+const TELEGRAM_URL: string = "https://t.me/+ahyI8x1lNaRmMTIy"; // ссылка на рабочий телеграм-чат или на рабочий телефон: `https://t.me/${PHONE}`
 
 interface NavItemProps {
   children: React.ReactNode;
@@ -71,7 +75,9 @@ export function Navbar() {
       shadow={false}
       blurred={false}
       color={isScrolling ? "white" : "transparent"}
-      className="fixed top-0 z-50 border-0"
+      className={`fixed top-0 z-50 border-0 ${
+        isScrolling ? "shadow-md shadow-blue-gray-500" : ""
+      }`}
     >
       <div className="container mx-auto flex items-center justify-between cursor-pointer">
         <Link href={"/"}>
@@ -104,7 +110,7 @@ export function Navbar() {
           </div>
           <Typography
             as="a"
-            href={"tel:+70000000000"}
+            href={`tel:+${PHONE}`}
             target={"_blank"}
             variant="small"
             className={`flex font-medium mr-2 text-lg font-[family-name:var(--font-play)] ${darkShadow} ${
@@ -112,9 +118,9 @@ export function Navbar() {
             }`}
           >
             <i className="fa-solid fa-phone-volume text-xl md:mt-1 mx-1 "></i>
-            <span className={`hidden md:flex`}>{`+7(000)0000-00-00`}</span>
+            <span className={`hidden md:flex`}>{`${formatPhone(PHONE)}`}</span>
           </Typography>
-          <a href="https://t.me/+ahyI8x1lNaRmMTIy" target="_blank">
+          <a href={`${TELEGRAM_URL}`} target="_blank">
             <IconButton variant="text" size="sm">
               <i
                 className={`fa-brands fa-telegram text-2xl ${darkShadow} ${
@@ -124,7 +130,7 @@ export function Navbar() {
             </IconButton>
           </a>
           <a
-            href="https://wa.me/79505033068?text=Здравствуйте!%20👋%20Меня%20интересует..."
+            href={`https://wa.me/${PHONE}?text=Здравствуйте!%20👋%20Меня%20интересует...`}
             target="_blank"
           >
             <IconButton variant="text" size="sm">

@@ -43,8 +43,8 @@ export default function RootLayout({
         <Layout>
           <Navbar />
 
-          <div className="relative min-h-screen w-full">
-            <header className="grid !min-h-[30rem] bg-gradient-to-t from-white to to-blue-600 px-8">
+          <div className="relative min-h-screen w-full bg-light-blue-50 pb-12 ">
+            <header className="grid !min-h-[30rem] bg-gradient-to-b from-blue-500 to to-light-blue-50 px-8 bg-[auto_650px] bg-no-repeat">
               <div className="container mx-auto mt-5 grid h-full w-full grid-cols-1 place-items-center pt-14">
                 <Providers>{children}</Providers>
               </div>

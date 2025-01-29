@@ -8,7 +8,7 @@ const defaultFont: string = "font-[family-name:var(--font-play)]";
 
 export function Footer() {
   return (
-    <footer className="mt-10 bg-gray-900 px-8 pt-12">
+    <footer className="bg-gray-900 px-8 pt-8">
       <div className="container mx-auto">
         <div className="flex flex-wrap justify-center gap-8 md:justify-between">
           <Link href={"/"}>

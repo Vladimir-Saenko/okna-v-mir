@@ -1,6 +1,8 @@
 import axios from "axios";
 import toast from "react-hot-toast";
 
+import { formatPhone } from "./helpers";
+
 interface sendData {
   name: string;
   phone: string;
@@ -12,21 +14,10 @@ const BOT_TOKEN = process.env.BOT_TOKEN;
 const CHAT_ID = process.env.CHAT_ID;
 const URL_API = `https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`;
 
-function formatPhone(strPhone: string): string {
-  const numbers: string = strPhone.replace(/[^\d]/g, "").slice(1);
-  const nums: string[] = [
-    "+7",
-    numbers.slice(0, 3),
-    numbers.slice(3, 6),
-    numbers.slice(6),
-  ];
-  return nums.join("-");
-}
-
 export function SendToTelegram(data: sendData): void {
   const message: string =
     `Запрос на звонок с сайта "Окна в Мир"\n` +
-    `===================================\n` +
+    `= ☎ =\n` +
     `Имя: ${data.name}\n` +
     `Телефон: ${formatPhone(data.phone)}\n` +
     `Время: ${data.time}\n` +
