@@ -17,7 +17,7 @@ const darkShadow: string = "[text-shadow:_0_2px_4px_rgb(0_0_0_/_0.5)]";
 //const hoverDarkShadow: string = "[text-shadow:_0_0_8px_rgb(255_255_255_/_0.8)]";
 
 const PHONE: string = process.env.PHONE_NUMBER || "+7-000-000-0000";
-const TELEGRAM_URL: string = "https://t.me/+ahyI8x1lNaRmMTIy"; // ссылка на рабочий телеграм-чат или на рабочий телефон: `https://t.me/${PHONE}`
+const TELEGRAM_URL: string = process.env.CHAT_URL || `https://t.me/${PHONE}`;
 
 interface NavItemProps {
   children: React.ReactNode;
