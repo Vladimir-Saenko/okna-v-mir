@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import React from "react";
 import {
   Navbar as MTNavbar,
@@ -7,7 +8,7 @@ import {
   // Button,
 } from "@material-tailwind/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
-import Image from "next/image";
+//import Image from "next/image";
 import Link from "next/link";
 
 import CallMe from "./сall-me";
@@ -81,7 +82,8 @@ export function Navbar() {
     >
       <div className="container mx-auto flex items-center justify-between cursor-pointer">
         <Link href={"/"}>
-          <Image
+          {/* <Image */}
+          <img
             width={100}
             height={80}
             src={`/logos/my-logo-2-${isScrolling ? "2" : "1"}.png`}
@@ -98,10 +100,18 @@ export function Navbar() {
           <NavItem href={"/"} target="_self">
             Окна
           </NavItem>
-          <NavItem>Двери</NavItem>
-          <NavItem>Жалюзи</NavItem>
-          <NavItem>Рольставни</NavItem>
-          <NavItem>Контакты</NavItem>
+          <NavItem href={"/doors"} target={"_self"}>
+            Двери
+          </NavItem>
+          <NavItem href={"/blinds"} target={"_self"}>
+            Жалюзи
+          </NavItem>
+          <NavItem href={"/shutters"} target={"_self"}>
+            Рольставни
+          </NavItem>
+          <NavItem href={"/about"} target={"_self"}>
+            Контакты
+          </NavItem>
         </ul>
 
         <div className="gap-2 flex items-center">
@@ -158,11 +168,21 @@ export function Navbar() {
       <Collapse open={open}>
         <div className="container mx-auto mt-4 rounded-lg border-t border-blue-gray-50 bg-white px-6 py-5">
           <ul className="flex flex-col gap-4 text-blue-gray-900">
-            <NavItem>Окна</NavItem>
-            <NavItem>Двери</NavItem>
-            <NavItem>Жалюзи</NavItem>
-            <NavItem>Рольставни</NavItem>
-            <NavItem>Контакты</NavItem>
+            <NavItem href={"/"} target="_self">
+              Окна
+            </NavItem>
+            <NavItem href={"/doors"} target={"_self"}>
+              Двери
+            </NavItem>
+            <NavItem href={"/blinds"} target={"_self"}>
+              Жалюзи
+            </NavItem>
+            <NavItem href={"/shutters"} target={"_self"}>
+              Рольставни
+            </NavItem>
+            <NavItem href={"/about"} target={"_self"}>
+              Контакты
+            </NavItem>
             <CallMe />
           </ul>
         </div>

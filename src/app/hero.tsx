@@ -1,6 +1,7 @@
+/* eslint-disable @next/next/no-img-element */
 "use client";
 
-import Image from "next/image";
+//import Image from "next/image";
 import { Typography } from "@material-tailwind/react";
 
 const bottomBlockStyle: string =
@@ -24,7 +25,7 @@ function Hero() {
           </Typography>
         </div>
         <div className="ml-auto">
-          <Image
+          <img
             width={1000}
             height={500}
             // priority={false}
@@ -39,7 +40,7 @@ function Hero() {
       <div className="flex flex-wrap flex-row gap-6 justify-center px-4 lg:mt-[-12rem] mt-0 w-[100%] z-5">
         <div className={`${bottomBlockStyle} ${defaultFont}`}>
           <p className="[text-shadow:_0_2px_4px_rgb(30_136_229_/_0.7)]">
-            Установка окон и дверей от 5-ти дней с момента офорления заказа
+            Работаем напрямую с заводом-изготовителем, без посредников
           </p>
         </div>
         <div className={`${bottomBlockStyle} ${defaultFont}`}>
