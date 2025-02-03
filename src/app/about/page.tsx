@@ -2,7 +2,7 @@ export default function About() {
   return (
     <>
       <h2 className="font-[family-name:var(--font-oswald)]">
-        Какой-то контент
+        Сведения о компании и список контактов
       </h2>
     </>
   );
