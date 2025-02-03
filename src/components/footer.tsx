@@ -1,5 +1,6 @@
+/* eslint-disable @next/next/no-img-element */
 "use client";
-import Image from "next/image";
+//import Image from "next/image";
 import { Typography, IconButton } from "@material-tailwind/react";
 import Link from "next/link";
 
@@ -12,10 +13,16 @@ export function Footer() {
       <div className="container mx-auto">
         <div className="flex flex-wrap justify-center gap-8 md:justify-between">
           <Link href={"/"}>
-            <Image
+            {/* <Image
               width={160}
               height={80}
               src={"/logos/my-logo-2-1.png"}
+              alt="logo"
+            /> */}
+            <img
+              src="/logos/my-logo-2-1.png"
+              width={160}
+              height={80}
               alt="logo"
             />
           </Link>
