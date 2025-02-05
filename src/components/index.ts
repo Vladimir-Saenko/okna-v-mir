@@ -8,3 +8,4 @@ export * from "./footer";
 
 export * from "./scroll-up-button";
 export * from "./сall-me";
+export * from "./float-block";

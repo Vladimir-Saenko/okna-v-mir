@@ -1,4 +1,3 @@
-/* eslint-disable @next/next/no-img-element */
 import React from "react";
 import {
   Navbar as MTNavbar,
@@ -8,7 +7,7 @@ import {
   // Button,
 } from "@material-tailwind/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
-//import Image from "next/image";
+import Image from "next/image";
 import Link from "next/link";
 
 import CallMe from "./сall-me";
@@ -82,8 +81,7 @@ export function Navbar() {
     >
       <div className="container mx-auto flex items-center justify-between cursor-pointer">
         <Link href={"/"}>
-          {/* <Image */}
-          <img
+          <Image
             width={100}
             height={80}
             src={`/logos/my-logo-2-${isScrolling ? "2" : "1"}.png`}
