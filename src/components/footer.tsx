@@ -18,12 +18,6 @@ export function Footer() {
               src={"/logos/my-logo-2-1.png"}
               alt="logo"
             />
-            {/* <img
-              src="/logos/my-logo-2-1.png"
-              width={160}
-              height={80}
-              alt="logo"
-            /> */}
           </Link>
           <div className="md:ml-8 flex flex-wrap justify-evenly md:w-[65%] text-xs md:text-base gap-4 md:gap-8">
             {/* Колонка МЕНЮ */}
