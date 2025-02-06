@@ -17,7 +17,7 @@ const darkShadow: string = "[text-shadow:_0_2px_4px_rgb(0_0_0_/_0.5)]";
 //const hoverDarkShadow: string = "[text-shadow:_0_0_8px_rgb(255_255_255_/_0.8)]";
 
 const PHONE: string = process.env.PHONE_NUMBER || "+7-000-000-0000";
-const TELEGRAM_URL: string = process.env.CHAT_URL || `https://t.me/${PHONE}`;
+const TELEGRAM_URL: string = `https://t.me/+${PHONE}`; // process.env.CHAT_URL;
 
 interface NavItemProps {
   children: React.ReactNode;
@@ -112,44 +112,57 @@ export function Navbar() {
           </NavItem>
         </ul>
 
-        <div className="gap-2 flex items-center">
-          <div className="hidden xl:flex">
-            <CallMe />
-          </div>
-          <Typography
-            as="a"
-            href={`tel:+${PHONE}`}
-            target={"_blank"}
-            variant="small"
-            className={`flex font-medium mr-2 text-lg font-[family-name:var(--font-play)] ${darkShadow} ${
-              isScrolling ? "text-gray-900" : "text-white"
+        <div className="grid grid-rows-2 gap-0 md:flex">
+          <div
+            className={`md:hidden text-[0.92rem] ${
+              isScrolling ? "text-gray-900" : `text-white ${darkShadow}`
             }`}
           >
-            <i className="fa-solid fa-phone-volume text-xl md:mt-1 mx-1 "></i>
-            <span className={`hidden md:flex`}>{`${formatPhone(PHONE)}`}</span>
-          </Typography>
-          <a href={`${TELEGRAM_URL}`} target="_blank">
-            <IconButton variant="text" size="sm">
-              <i
-                className={`fa-brands fa-telegram text-2xl ${darkShadow} ${
-                  isScrolling ? "text-gray-900" : "text-white"
-                }`}
-              />
-            </IconButton>
-          </a>
-          <a
-            href={`https://wa.me/${PHONE}?text=Здравствуйте!%20👋%20Меня%20интересует...`}
-            target="_blank"
-          >
-            <IconButton variant="text" size="sm">
-              <i
-                className={`fa-brands fa-whatsapp text-2xl ${darkShadow} ${
-                  isScrolling ? "text-gray-900" : "text-white"
-                }`}
-              />
-            </IconButton>
-          </a>
+            +7-959-583-6688
+          </div>
+
+          <div className="-mt-[6px] md:mt-0 gap-2 flex items-center">
+            <div className="hidden xl:flex">
+              <CallMe />
+            </div>
+            <Typography
+              as="a"
+              href={`tel:+${PHONE}`}
+              target={"_blank"}
+              variant="small"
+              className={`flex font-medium mr-2 text-lg font-[family-name:var(--font-play)] ${darkShadow} ${
+                isScrolling ? "text-gray-900" : "text-white"
+              }`}
+            >
+              <i className="fa-solid fa-phone-volume text-xl md:mt-1 mx-1 "></i>
+              <span className={`hidden md:flex`}>{`${formatPhone(
+                PHONE
+              )}`}</span>
+            </Typography>
+            <a href={`${TELEGRAM_URL}`} target="_blank">
+              <IconButton variant="text" size="sm">
+                <i
+                  className={`fa-brands fa-telegram text-2xl ${darkShadow} ${
+                    isScrolling ? "text-gray-900" : "text-white"
+                  }`}
+                />
+              </IconButton>
+            </a>
+            <a
+              href={`https://wa.me/${PHONE}?text=Здравствуйте!%20👋%20Меня%20интересует...`}
+              target="_blank"
+            >
+              <IconButton variant="text" size="sm">
+                <i
+                  className={`fa-brands fa-whatsapp text-2xl ${darkShadow} ${
+                    isScrolling ? "text-gray-900" : "text-white"
+                  }`}
+                />
+              </IconButton>
+            </a>
+          </div>
         </div>
+
         <IconButton
           variant="text"
           color={isScrolling ? "gray" : "white"}

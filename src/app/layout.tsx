@@ -20,7 +20,7 @@ const play = Play({
 export const metadata: Metadata = {
   title: "Окна в Мир",
   description:
-    "Установка окон, дверей, жалюзи, рольставней и других ПВХ-конструкций в Луганске",
+    "Установка окон, дверей, жалюзи, рольставней и других ПВХ-конструкций в Луганске и ЛНР",
 };
 
 export default function RootLayout({

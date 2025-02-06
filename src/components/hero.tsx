@@ -1,22 +1,29 @@
+//* Верхний компонент страницы *//
+
 "use client";
 
 import Image from "next/image";
 import { Typography } from "@material-tailwind/react";
 
-import { FloatBlock } from "@/components";
+import FloatBlock from "./float-block";
+import SloganBlock from "./slogan-block";
+
+interface IHeroContent {
+  headerText: string;
+  bgImageSrc: string;
+  adImageSrc: string;
+}
 
 const defaultFont: string = "font-[family-name:var(--font-play)]";
-const bg_image_src: string = "/images/z_window_gradient.png";
-const header_text: string = "Установка пластиковых окон";
-const ad_image: string = "/images/bg_ad_windows.png";
 
-function Hero() {
+function Hero(heroProps: IHeroContent) {
   return (
     <>
+      {/* Хедер */}
       <div className="flex w-[100%]">
         <div className="mb-3 mt-3 text-left [text-shadow:_0_0_12px_rgb(0_0_0_/_0.8)] absolute ml-4 z-10 max-w-[40%] font-normal text-xs lg:text-base ">
           <Typography variant="h2" color="white" className={`${defaultFont}`}>
-            {header_text}
+            {heroProps.headerText}
           </Typography>
           <Typography
             variant="h4"
@@ -31,7 +38,7 @@ function Hero() {
             width={1000}
             height={500}
             // priority={false}
-            src={bg_image_src}
+            src={heroProps.bgImageSrc}
             alt="window"
             className="rounded-r-xl"
           />
@@ -56,27 +63,13 @@ function Hero() {
         </div>
       </div>
 
-      <div className="mt-5 rounded-xl bg-blue p-4 md:p-8 shadow-md">
-        <div className="grid grid-cols-1 lg:grid-cols-[2fr_1fr]">
-          <Typography
-            variant="paragraph"
-            className={`${defaultFont} font-normal !text-blue-800 text-4xl xl:text-5xl text-center`}
-          >
-            Выбирая нашу компанию, Вы выбираете{" "}
-            <span className="underline text-indigo-800">качественные</span> окна
-            и <span className="underline text-indigo-800">качественный</span>{" "}
-            монтаж.
-          </Typography>
-
-          <Image
-            width={480}
-            height={232}
-            src={ad_image}
-            alt="window"
-            className="rounded-r-xl hidden lg:flex z-20 mr-0 ml-auto"
-          />
-        </div>
-      </div>
+      {/* Рекламный слоган с картинкой */}
+      <SloganBlock imageSrc={heroProps.adImageSrc}>
+        Выбирая нашу компанию, Вы выбираете{" "}
+        <span className="underline text-indigo-800">качественные</span>{" "}
+        материалы и{" "}
+        <span className="underline text-indigo-800">качественный</span> монтаж.
+      </SloganBlock>
     </>
   );
 }
