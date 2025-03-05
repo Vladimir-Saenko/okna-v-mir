@@ -22,11 +22,15 @@ function Hero(heroProps: IHeroContent) {
       {/* Хедер */}
       <div className="flex w-[100%]">
         <div className="mb-3 mt-3 text-left [text-shadow:_0_0_12px_rgb(0_0_0_/_0.8)] absolute ml-4 z-10 max-w-[40%] font-normal text-xs lg:text-base ">
-          <Typography variant="h2" color="white" className={`${defaultFont}`}>
+          <Typography
+            variant="h1"
+            color="white"
+            className={`${defaultFont} mb-4`}
+          >
             {heroProps.headerText}
           </Typography>
           <Typography
-            variant="h4"
+            variant="h3"
             color="white"
             className={`${defaultFont} hidden lg:flex`}
           >

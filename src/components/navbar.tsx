@@ -108,7 +108,7 @@ export function Navbar() {
             Рольставни
           </NavItem>
           <NavItem href={"/about"} target={"_self"}>
-            Контакты
+            О компании
           </NavItem>
         </ul>
 
@@ -192,7 +192,7 @@ export function Navbar() {
               Рольставни
             </NavItem>
             <NavItem href={"/about"} target={"_self"}>
-              Контакты
+              О компании
             </NavItem>
             <CallMe />
           </ul>
