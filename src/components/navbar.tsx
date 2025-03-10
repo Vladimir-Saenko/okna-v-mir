@@ -32,7 +32,7 @@ function NavItem({ children, href, target }: NavItemProps) {
         href={href || "#"}
         target={target || "_blank"}
         variant="small"
-        className={`font-medium text-lg font-[family-name:var(--font-play)]`}
+        className={`font-medium text-2xl font-[family-name:var(--font-play)]`}
       >
         {children}
       </Typography>
@@ -104,9 +104,9 @@ export function Navbar() {
           <NavItem href={"/blinds"} target={"_self"}>
             Жалюзи
           </NavItem>
-          <NavItem href={"/shutters"} target={"_self"}>
+          {/* <NavItem href={"/shutters"} target={"_self"}>
             Рольставни
-          </NavItem>
+          </NavItem> */}
           <NavItem href={"/about"} target={"_self"}>
             О компании
           </NavItem>
@@ -188,9 +188,9 @@ export function Navbar() {
             <NavItem href={"/blinds"} target={"_self"}>
               Жалюзи
             </NavItem>
-            <NavItem href={"/shutters"} target={"_self"}>
+            {/* <NavItem href={"/shutters"} target={"_self"}>
               Рольставни
-            </NavItem>
+            </NavItem> */}
             <NavItem href={"/about"} target={"_self"}>
               О компании
             </NavItem>

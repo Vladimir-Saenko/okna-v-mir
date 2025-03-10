@@ -1,12 +1,12 @@
 //* Главная страница - Окна *//
 
 import Hero from "@/components/hero";
-import { OurWorksGallery } from "@/components/our-works-gallery";
+// import { OurWorksGallery } from "@/components/our-works-gallery";
 import DevelopPlug from "@/components/develop-plug";
 
-const header_text: string = "Продажа и установка дверей";
-const bg_image_src: string = "/images/bg_doors_gradient.png";
-const ad_image_src: string = "/images/bg_ad_doors.png";
+const header_text: string = "Жалюзи для Ваших окон";
+const bg_image_src: string = "/images/bg_blinds_gradient.png";
+const ad_image_src: string = "/images/bg_ad_blinds.png";
 
 export default function Doors() {
   return (
@@ -19,8 +19,6 @@ export default function Doors() {
 
       {/* Заглушка на время разработки */}
       <DevelopPlug />
-
-      <OurWorksGallery />
     </>
   );
 }

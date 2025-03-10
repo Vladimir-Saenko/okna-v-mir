@@ -2,9 +2,9 @@ import Image from "next/image";
 
 export default function About() {
   return (
-    <div className="w-[850px] shadow-lg shadow-gray-600 bg-white p-8 rounded-sm">
-      <div className="grid grid-cols-[200px_auto] ">
-        <div className="content-center ">
+    <div className="max-w-[850px] shadow-lg shadow-gray-600 bg-white p-8 rounded-sm">
+      <div className="grid grid-cols-1 lg:grid-cols-[200px_auto] ">
+        <div className="content-center hidden lg:block">
           <Image
             width={300}
             height={300}
@@ -13,7 +13,7 @@ export default function About() {
             className="content-center "
           />
         </div>
-        <div className="justify-items-end ">
+        <div className="justify-items-start lg:justify-items-end ">
           <h1 className="font-serif font-semibold text-2xl">
             ИП НОСАЧЁВА ЕЛЕНА ВЛАДИМИРОВНА
           </h1>
