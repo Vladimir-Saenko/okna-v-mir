@@ -51,6 +51,15 @@ export default function WindowBrands() {
             ]}
           />
         </div>
+        <hr className="h-[2px] my-4 bg-[rgb(0_112_192)] border-0" />
+        <Typography
+          variant="h3"
+          color="white"
+          className={`${defaultFont} text-base xl:text-lg text-indigo-800`}
+        >
+          Ознакомиться с полным каталогом моделей и ценами можно в офисе, по
+          телефону или через соцсети
+        </Typography>
       </div>
       <div
         className={`mt-8 p-4 min-h-[100px] w-[100%] bg-white rounded-md flex flex-col text-center ${defaultFont}`}
@@ -101,9 +110,18 @@ export default function WindowBrands() {
               "Пятикамерный профиль",
               "Стеклопакет 32/40 мм",
               "Системная глубина 70 мм",
-            ]}
-          /> */}
+              ]}
+              /> */}
         </div>
+        <hr className="h-[2px] my-4 bg-[rgb(0_112_192)] border-0" />
+        <Typography
+          variant="h3"
+          color="white"
+          className={`${defaultFont} text-base xl:text-lg text-indigo-800`}
+        >
+          Ознакомиться с полным каталогом моделей и ценами можно в офисе, по
+          телефону или через соцсети
+        </Typography>
       </div>
     </>
   );

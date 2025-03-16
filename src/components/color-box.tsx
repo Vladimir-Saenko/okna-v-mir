@@ -46,7 +46,7 @@ export default function ColorBox() {
       >
         Мы предлагаем широкую цветовую гамму профиля на Ваш выбор:
       </Typography>
-      <div className="flex flex-wrap gap-12">
+      <div className="flex flex-wrap gap-4 2xl:gap-8 justify-around">
         {colors.map((color) => (
           <ColorItem
             imgSrc={color.imgSrc}

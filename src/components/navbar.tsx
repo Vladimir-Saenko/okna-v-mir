@@ -79,14 +79,14 @@ export function Navbar() {
         isScrolling ? "shadow-md shadow-blue-gray-500" : ""
       }`}
     >
-      <div className="container mx-auto flex items-center justify-between cursor-pointer">
+      <div className="container mx-auto flex items-center justify-around cursor-pointer">
         <Link href={"/"}>
           <Image
-            width={100}
+            width={80}
             height={80}
-            src={`/logos/my-logo-2-${isScrolling ? "2" : "1"}.png`}
+            src="/logos/logo-normal.png"
             alt="logo"
-            className="h-auto"
+            className="-my-[15px]"
           />
         </Link>
 
@@ -112,15 +112,7 @@ export function Navbar() {
           </NavItem>
         </ul>
 
-        <div className="grid grid-rows-2 gap-0 md:flex">
-          <div
-            className={`md:hidden text-[0.92rem] ${
-              isScrolling ? "text-gray-900" : `text-white ${darkShadow}`
-            }`}
-          >
-            +7-959-583-6688
-          </div>
-
+        <div className="flex">
           <div className="-mt-[6px] md:mt-0 gap-2 flex items-center">
             <div className="hidden xl:flex">
               <CallMe />
@@ -135,9 +127,7 @@ export function Navbar() {
               }`}
             >
               <i className="fa-solid fa-phone-volume text-xl md:mt-1 mx-1 "></i>
-              <span className={`hidden md:flex`}>{`${formatPhone(
-                PHONE
-              )}`}</span>
+              <span>{`${formatPhone(PHONE)}`}</span>
             </Typography>
             <a href={`${TELEGRAM_URL}`} target="_blank">
               <IconButton variant="text" size="sm">

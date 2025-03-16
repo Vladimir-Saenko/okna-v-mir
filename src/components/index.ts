@@ -12,3 +12,4 @@ export * from "./сall-me";
 export * from "./float-block";
 export * from "./slogan-block";
 export * from "./develop-plug";
+export * from "./end-page";

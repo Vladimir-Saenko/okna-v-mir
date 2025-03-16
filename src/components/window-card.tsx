@@ -31,11 +31,11 @@ export function WindowCard(cardProps: CardProps) {
         </Typography>
         <Typography
           as="h4"
-          className={`${defaultFont} font-semibol mb-2 text-base lg:text-xl  text-indigo-900`}
+          className={`${defaultFont} font-semibol mb-2 text-sm md:text-base lg:text-xl  text-indigo-900`}
         >
           {cardProps.description}
         </Typography>
-        <ul className="list-disc text-sm lg:text-lg ">
+        <ul className="list-disc text-xs md:text-sm lg:text-lg ">
           <li>{cardProps.descList[0]}</li>
           <li>{cardProps.descList[1]}</li>
           <li>{cardProps.descList[2]}</li>

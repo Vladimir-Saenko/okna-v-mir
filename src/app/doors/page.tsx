@@ -1,7 +1,7 @@
 //* Главная страница - Окна *//
 
 import Hero from "@/components/hero";
-import { OurWorksGallery } from "@/components/our-works-gallery";
+// import { OurWorksGallery } from "@/components/our-works-gallery";
 import DevelopPlug from "@/components/develop-plug";
 
 const header_text: string = "Продажа и установка дверей";
@@ -20,7 +20,7 @@ export default function Doors() {
       {/* Заглушка на время разработки */}
       <DevelopPlug />
 
-      <OurWorksGallery />
+      {/* <OurWorksGallery /> */}
     </>
   );
 }

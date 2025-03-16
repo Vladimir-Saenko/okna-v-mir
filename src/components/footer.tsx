@@ -10,15 +10,37 @@ export function Footer() {
   return (
     <footer className="bg-gray-900 px-8 pt-8">
       <div className="container mx-auto">
-        <div className="flex flex-wrap justify-center gap-8 md:justify-between">
-          <Link href={"/"}>
+        <div className="flex justify-around gap-8 md:justify-between">
+          <Link href={"/"} className="my-auto min-h-[120px] flex">
             <Image
-              width={160}
-              height={80}
-              src={"/logos/my-logo-2-1.png"}
+              width={120}
+              height={120}
+              src={"/logos/logo-big.png"}
               alt="logo"
+              className="min-w-[120px] min-h-[120px]"
             />
+
+            <div
+              color="white"
+              className={`text-blue-100 ${defaultFont} text-3xl font-semibold mb-3 lg:hidden text-center mt-2 ml-3`}
+            >
+              <p>ОКНА</p>
+              <p> В </p>
+              <p>МИР</p>
+            </div>
           </Link>
+          <div className="hidden lg:block">
+            <Typography
+              color="white"
+              className={`text-blue-100 ${defaultFont} text-2xl underline mb-3`}
+            >
+              ОКНА В МИР
+            </Typography>
+            <Typography as="p" className={`${defaultFont} text-gray-50`}>
+              Установка окон, дверей, жалюзи, рольставней и других
+              ПВХ-конструкций в Луганске и ЛНР
+            </Typography>
+          </div>
           <div className="md:ml-8 flex flex-wrap justify-evenly md:w-[65%] text-xs md:text-base gap-4 md:gap-8">
             {/* Колонка МЕНЮ */}
             <div>
@@ -96,7 +118,7 @@ export function Footer() {
             </div>
           </div>
         </div>
-        <div className="mt-4 flex flex-wrap items-center justify-center gap-y-2 gap-x-8 border-t border-gray-700 py-3 md:justify-between">
+        <div className="mt-4 flex flex-wrap items-center justify-center gap-y-1 gap-x-8 border-t border-gray-700 py-3 md:justify-between">
           <Typography
             color="white"
             className={`text-center font-light text-xs ${defaultFont}`}

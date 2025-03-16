@@ -2,9 +2,9 @@
 
 import Hero from "@/components/hero";
 import { OurWorksGallery } from "@/components/our-works-gallery";
-import DevelopPlug from "@/components/develop-plug";
 import ColorBox from "@/components/color-box";
 import WindowBrands from "@/components/window-brands";
+import EndPage from "@/components/end-page";
 
 const header_text: string = "Установка пластиковых окон";
 const bg_image_src: string = "/images/bg_windows_gradient.png";
@@ -20,9 +20,7 @@ export default function Home() {
       />
       <WindowBrands />
       <ColorBox />
-
-      {/* Заглушка на время разработки */}
-      <DevelopPlug />
+      <EndPage />
 
       <OurWorksGallery />
     </>
