@@ -8,7 +8,7 @@ export default function About() {
           <Image
             width={300}
             height={300}
-            src={`/logos/logo_big.png`}
+            src={`/logos/logo-big.png`}
             alt="logo"
             className="content-center "
           />
