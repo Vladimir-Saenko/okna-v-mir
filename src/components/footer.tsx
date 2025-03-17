@@ -37,8 +37,8 @@ export function Footer() {
               ОКНА В МИР
             </Typography>
             <Typography as="p" className={`${defaultFont} text-gray-50`}>
-              Установка окон, дверей, жалюзи, рольставней и других
-              ПВХ-конструкций в Луганске и ЛНР
+              Пластиковые окна, остекление балконов, продажа и установка дверей,
+              жалюзи и рулонных штор в Луганске и ЛНР
             </Typography>
           </div>
           <div className="md:ml-8 flex flex-wrap justify-evenly md:w-[65%] text-xs md:text-base gap-4 md:gap-8">
