@@ -19,36 +19,42 @@ export function Footer() {
               alt="logo"
               className="min-w-[120px] min-h-[120px]"
             />
-
-            <div
-              color="white"
-              className={`text-blue-100 ${defaultFont} text-3xl font-semibold mb-3 lg:hidden text-center mt-2 ml-3`}
-            >
-              <p>ОКНА</p>
-              <p> В </p>
-              <p>МИР</p>
-            </div>
           </Link>
-          <div className="hidden lg:block">
+          <div>
             <Typography
               color="white"
               className={`text-blue-100 ${defaultFont} text-2xl underline mb-3`}
             >
               ОКНА В МИР
             </Typography>
-            <Typography as="p" className={`${defaultFont} text-gray-50`}>
-              Пластиковые окна, остекление балконов, продажа и установка дверей,
-              жалюзи и рулонных штор в Луганске и ЛНР
+            <Typography
+              as="p"
+              className={`${defaultFont} text-gray-50 text-sm lg:text-base`}
+            >
+              Наша компания предлагает Вам пластиковые конструкции{" "}
+              <span className="hidden lg:contents ">
+                – окна, балконы, входные и межкомнатные двери, различного рода
+                жалюзи и рулонные шторы{" "}
+              </span>
+              c быстрой установкой{" "}
+              <span className="hidden lg:contents">
+                в удобное для Вас время{" "}
+              </span>
+              и гарантией качества материалов и работ.{" "}
+              <span className="hidden xl:contents">
+                Наш главный принцип — мы продаем не товар, а качественную услугу
+                по доступной цене, Ваш уют – наша забота!
+              </span>
             </Typography>
           </div>
-          <div className="md:ml-8 flex flex-wrap justify-evenly md:w-[65%] text-xs md:text-base gap-4 md:gap-8">
+          <div className="md:ml-8 flex flex-wrap justify-evenly text-base gap-4 md:gap-8">
             {/* Колонка МЕНЮ */}
             <div>
               <Typography
                 color="white"
                 className={`text-blue-100 ${defaultFont} text-2xl underline mb-3`}
               >
-                Меню
+                ССЫЛКИ
               </Typography>
               <ul className={`text-gray-50 ${defaultFont} cursor-pointer`}>
                 <li>
@@ -61,7 +67,7 @@ export function Footer() {
                 </li>
                 <li>
                   <Link
-                    href="/dveri"
+                    href="/doors"
                     className="cursor-pointer hover:underline hover:text-white"
                   >
                     Двери
@@ -69,7 +75,7 @@ export function Footer() {
                 </li>
                 <li>
                   <Link
-                    href="#"
+                    href="/blinds"
                     className="cursor-pointer hover:underline hover:text-white"
                   >
                     Жалюзи
@@ -77,16 +83,16 @@ export function Footer() {
                 </li>
                 <li>
                   <Link
-                    href="#"
+                    href="/about"
                     className="cursor-pointer hover:underline hover:text-white"
                   >
-                    Рольставни
+                    О компании
                   </Link>
                 </li>
               </ul>
             </div>
             {/* Колонка КОНТАКТЫ */}
-            <div>
+            {/* <div>
               <Typography
                 color="white"
                 className={`text-blue-100 ${defaultFont} text-2xl underline mb-3`}
@@ -115,7 +121,7 @@ export function Footer() {
                   </a>
                 </li>
               </ul>
-            </div>
+            </div> */}
           </div>
         </div>
         <div className="mt-4 flex flex-wrap items-center justify-center gap-y-1 gap-x-8 border-t border-gray-700 py-3 md:justify-between">

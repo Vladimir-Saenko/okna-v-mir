@@ -19,5 +19,5 @@ body {
   color: var(--foreground);
   background: var(--background);
   font-family: Arial, Helvetica;
-  min-width: 720px;
+  min-width: 640px;
 }

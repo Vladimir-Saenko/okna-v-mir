@@ -61,8 +61,8 @@ function Hero(heroProps: IHeroContent) {
         </FloatBlock>
         <div className="hidden lg:flex">
           <FloatBlock>
-            Работаем напрямую с заводом-изготовителем и только качественными
-            материалами
+            Большой опыт работы на рынке изделий из ПВХ. Гарантия на изделия и
+            монтаж до 5 лет.
           </FloatBlock>
         </div>
       </div>

@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Oswald, Play } from "next/font/google";
 import "./globals.css";
 
@@ -22,6 +22,14 @@ export const metadata: Metadata = {
   description:
     "Пластиковые окна, остекление балконов, продажа и установка дверей, жалюзи и рулонных штор в Луганске и ЛНР",
 };
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1.0,
+  // maximumScale: 1.0,
+  // userScalable: true,
+  // Also supported but less commonly used
+  // interactiveWidget: 'resizes-visual',
+};
 
 export default function RootLayout({
   children,
@@ -38,6 +46,7 @@ export default function RootLayout({
           crossOrigin="anonymous"
           referrerPolicy="no-referrer"
         />
+        <link rel="icon" href="/favicon.svg" />
       </head>
       <body className={`${oswald.variable} ${play.variable} antialiased`}>
         <Layout>
