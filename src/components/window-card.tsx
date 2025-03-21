@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
-/* eslint-disable @next/next/no-img-element */
 import { Typography } from "@material-tailwind/react";
 import Image from "next/image";
 
