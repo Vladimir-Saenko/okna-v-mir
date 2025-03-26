@@ -22,7 +22,7 @@ export default function EndPage() {
       </p>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
-        <span className="text-center md:text-right md:mr-2">
+        <span className="text-center md:text-right md:mr-2 text-lg">
           Позвонить нам :
         </span>
         <Typography
@@ -35,7 +35,7 @@ export default function EndPage() {
           <i className="fa-solid fa-phone-volume text-xl mx-1 "></i>
           <span className="md:-mt-1">{`${formatPhone(PHONE)}`}</span>
         </Typography>
-        <span className="text-center md:text-right md:mr-2 mt-1">
+        <span className="text-center md:text-right md:mr-2 mt-1 text-lg">
           Написать сообщение :
         </span>
         <div className="md:flex font-medium md:ml-2 -mt-2 md:mt-0">
@@ -54,7 +54,7 @@ export default function EndPage() {
             </IconButton>
           </a>
         </div>
-        <span className="text-center md:text-right md:mr-2 md:mt-1 ">
+        <span className="text-center md:text-right md:mr-2 md:mt-1 text-lg">
           Или :
         </span>
         <div className="text-center md:text-left md:ml-2 md:w-48 -mt-2 md:mt-0">
