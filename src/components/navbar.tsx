@@ -32,7 +32,7 @@ function NavItem({ children, href, target }: NavItemProps) {
         href={href || "#"}
         target={target || "_blank"}
         variant="small"
-        className={`font-medium text-2xl font-[family-name:var(--font-play)]`}
+        className={`font-medium text-2xl font-[family-name:var(--font-play)] hover:pb-1 hover:[text-shadow:_0_0_8px_rgb(0_0_255_/_0.8)]`}
       >
         {children}
       </Typography>

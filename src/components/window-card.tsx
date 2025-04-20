@@ -6,6 +6,7 @@ interface CardProps {
   headerText: string;
   description: string;
   descList: string[];
+  price: number;
 }
 
 const defaultFont = "font-[family-name:var(--font-play)]";
@@ -38,6 +39,13 @@ export function WindowCard(cardProps: CardProps) {
           <li>{cardProps.descList[1]}</li>
           <li>{cardProps.descList[2]}</li>
         </ul>
+        <hr className="h-[2px] my-2 bg-indigo-600 border-0 w-[90%] mr-auto" />
+        <Typography
+          as="h4"
+          className={`${defaultFont} text-left font-semibol mb-2 text-sm md:text-base lg:text-xl  text-indigo-900`}
+        >
+          от {cardProps.price}р.
+        </Typography>
       </div>
     </div>
   );

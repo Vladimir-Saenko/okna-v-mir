@@ -35,9 +35,9 @@ export function OurWorksGallery() {
       >
         НАШИ РАБОТЫ
       </Typography>
-      <div>
+      <div className=" inline-block overflow-hidden ">
         <img
-          className="h-auto w-full max-w-full rounded-lg object-cover object-center md:h-[480px]"
+          className="h-auto w-full max-w-full rounded-lg object-cover object-center md:h-[480px] transition delay-150 duration-300 ease-in-out hover:scale-110"
           src={active}
           alt=""
         />
