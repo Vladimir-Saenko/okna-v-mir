@@ -39,7 +39,7 @@ export default function WindowBrands() {
               "Стеклопакет 24/32 мм",
               "Системная глубина 60 мм",
             ]}
-            price={4500}
+            price={4650}
           />
           <WindowCard
             imageSrc="/images/elex70.png"
@@ -50,7 +50,7 @@ export default function WindowBrands() {
               "Стеклопакет 32/40 мм",
               "Системная глубина 70 мм",
             ]}
-            price={5800}
+            price={6675}
           />
         </div>
         <hr className="h-[2px] my-4 bg-[rgb(0_112_192)] border-0" />
@@ -93,7 +93,7 @@ export default function WindowBrands() {
               "Системная глубина 60 мм",
               "Идеально гладкий пластик",
             ]}
-            price={8000}
+            price={7900}
           />
           <WindowCard
             imageSrc="/images/grazio.png"
@@ -104,7 +104,7 @@ export default function WindowBrands() {
               "Системная глубина 70 мм",
               "Минимальная воздухопроницаемость",
             ]}
-            price={11210}
+            price={10270}
           />
           {/* <WindowCard
             imageSrc="/images/delight.png"
