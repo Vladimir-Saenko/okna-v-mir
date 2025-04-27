@@ -32,7 +32,7 @@ function NavItem({ children, href, target }: NavItemProps) {
         href={href || "#"}
         target={target || "_blank"}
         variant="small"
-        className={`font-medium text-2xl font-[family-name:var(--font-play)] hover:pb-1 hover:[text-shadow:_0_0_8px_rgb(0_0_255_/_0.8)]`}
+        className={`font-medium text-2xl font-[family-name:var(--font-play)] lg:hover:pb-1 hover:[text-shadow:_0_0_8px_rgb(0_0_255_/_0.8)]`}
       >
         {children}
       </Typography>
@@ -74,26 +74,26 @@ export function Navbar() {
       fullWidth
       shadow={false}
       blurred={false}
-      color={isScrolling ? "white" : "transparent"}
+      //  color={isScrolling ? "white" : "transparent"}
       className={`fixed top-0 z-50 border-0 ${
-        isScrolling ? "shadow-md shadow-blue-gray-500" : ""
+        isScrolling
+          ? "shadow-md shadow-blue-gray-500 bg-blue-500"
+          : "bg-transparent"
       }`}
     >
       <div className="container mx-auto flex items-center justify-around cursor-pointer">
         <Link href={"/"}>
           <Image
-            width={80}
+            width={156}
             height={80}
-            src="/logos/logo-normal.png"
+            src="/logos/logo-wide.png"
             alt="logo"
             className="-my-[15px]"
           />
         </Link>
 
         <ul
-          className={`ml-10 hidden items-center gap-5 lg:flex ${darkShadow} ${
-            isScrolling ? "text-gray-900" : "text-white"
-          } `}
+          className={`ml-10 hidden items-center gap-5 lg:flex ${darkShadow} text-white`}
         >
           <NavItem href={"/"} target="_self">
             Окна
@@ -122,9 +122,7 @@ export function Navbar() {
               href={`tel:+${PHONE}`}
               target={"_blank"}
               variant="small"
-              className={`flex font-medium mr-2 text-lg font-[family-name:var(--font-play)] ${darkShadow} ${
-                isScrolling ? "text-gray-900" : "text-white"
-              }`}
+              className={`flex font-medium mr-2 text-lg font-[family-name:var(--font-play)] ${darkShadow} text-white`}
             >
               <i className="fa-solid fa-phone-volume text-xl md:mt-1 mx-1 "></i>
               <span>{`${formatPhone(PHONE)}`}</span>
@@ -132,9 +130,7 @@ export function Navbar() {
             <a href={`${TELEGRAM_URL}`} target="_blank">
               <IconButton variant="text" size="sm">
                 <i
-                  className={`fa-brands fa-telegram text-2xl ${darkShadow} ${
-                    isScrolling ? "text-gray-900" : "text-white"
-                  }`}
+                  className={`fa-brands fa-telegram text-2xl ${darkShadow} text-white`}
                 />
               </IconButton>
             </a>
@@ -144,9 +140,7 @@ export function Navbar() {
             >
               <IconButton variant="text" size="sm">
                 <i
-                  className={`fa-brands fa-whatsapp text-2xl ${darkShadow} ${
-                    isScrolling ? "text-gray-900" : "text-white"
-                  }`}
+                  className={`fa-brands fa-whatsapp text-2xl ${darkShadow} text-white`}
                 />
               </IconButton>
             </a>

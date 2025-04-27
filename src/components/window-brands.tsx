@@ -29,7 +29,7 @@ export default function WindowBrands() {
           </Typography>
         </div>
         <hr className="h-[2px] my-8 bg-[rgb(0_112_192)] border-0" />
-        <div className="flex justify-center gap-5">
+        <div className="grid grid-cols-2 justify-center gap-5">
           <WindowCard
             imageSrc="/images/elex58.png"
             headerText="ELEX 58"
@@ -59,8 +59,8 @@ export default function WindowBrands() {
           color="white"
           className={`${defaultFont} text-base xl:text-lg text-indigo-800`}
         >
-          Ознакомиться с полным каталогом моделей и ценами можно в офисе, по
-          телефону или через соцсети
+          Ознакомиться с полным каталогом моделей и уточнить цены можно в офисе,
+          по телефону или через соцсети
         </Typography>
       </div>
       <div
@@ -83,18 +83,30 @@ export default function WindowBrands() {
           </Typography>
         </div>
         <hr className="h-[2px] my-8 bg-[rgb(0_112_192)] border-0" />
-        <div className="flex justify-center gap-5">
+        <div className="grid grid-cols-2 justify-center gap-5">
+          <WindowCard
+            imageSrc="/images/blitz.png"
+            headerText="BLITZ"
+            description="Надёжные окна из базовой профильной системы"
+            descList={[
+              "Трёхкамерный профиль",
+              "Системная глубина 60 мм",
+              "Базовая эконом-модель",
+            ]}
+            price={5250}
+          />
           <WindowCard
             imageSrc="/images/constanta.png"
             headerText="CONSTANTA"
             description="Экономичные окна с улучшенной тепло- и звукоизоляцией"
             descList={[
-              "Черырёхкамерный профиль",
+              "Четырёхкамерный профиль",
               "Системная глубина 60 мм",
               "Идеально гладкий пластик",
             ]}
             price={7900}
           />
+
           <WindowCard
             imageSrc="/images/grazio.png"
             headerText="GRAZIO"
@@ -106,16 +118,17 @@ export default function WindowBrands() {
             ]}
             price={10270}
           />
-          {/* <WindowCard
-            imageSrc="/images/delight.png"
-            headerText="DELIGHT DISIGN"
-            description="Теплый оконный профиль с усиленной тепло- и звукоизоляцией."
+          <WindowCard
+            imageSrc="/images/neo80.png"
+            headerText="NEO 80"
+            description="Для самых взыскательных покупателей"
             descList={[
-              "Пятикамерный профиль",
-              "Стеклопакет 32/40 мм",
-              "Системная глубина 70 мм",
-              ]}
-              /> */}
+              "Шестикамерный профиль",
+              "Системная глубина 80 мм",
+              "Максимальный уровень комфорта",
+            ]}
+            price={21000}
+          />
         </div>
         <hr className="h-[2px] my-4 bg-[rgb(0_112_192)] border-0" />
         <Typography
@@ -123,8 +136,8 @@ export default function WindowBrands() {
           color="white"
           className={`${defaultFont} text-base xl:text-lg text-indigo-800`}
         >
-          Ознакомиться с полным каталогом моделей и ценами можно в офисе, по
-          телефону или через соцсети
+          Ознакомиться с полным каталогом моделей и уточнить цены можно в офисе,
+          по телефону или через соцсети
         </Typography>
       </div>
     </>

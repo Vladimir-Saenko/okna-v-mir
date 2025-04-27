@@ -10,6 +10,7 @@ interface IBlindsCardProps {
   type: string;
   images: string[];
   desc: string;
+  price: string;
 }
 
 export default function BlindsCard(cardProps: IBlindsCardProps) {
@@ -48,6 +49,15 @@ export default function BlindsCard(cardProps: IBlindsCardProps) {
         >
           {cardProps.desc}
         </Typography>
+        <div className="mb-0 mt-auto">
+          <hr className="h-[2px] my-2 bg-indigo-600 border-0 w-[40%] mr-auto" />
+          <Typography
+            as="h4"
+            className={`${defaultFont} pl-2 mr-[60%] text-left font-semibol mb-2 text-sm md:text-base lg:text-xl  text-indigo-900 bg-gradient-to-r from-blue-50 to-blue-200 `}
+          >
+            {cardProps.price}
+          </Typography>
+        </div>
       </div>
     </div>
   );

@@ -13,7 +13,7 @@ const defaultFont = "font-[family-name:var(--font-play)]";
 
 export function WindowCard(cardProps: CardProps) {
   return (
-    <div className="flex items-center">
+    <div className="flex items-center hover:bg-blue-gray-50 hover:border border-blue-100">
       <Image
         src={cardProps.imageSrc}
         alt={cardProps.headerText}
@@ -42,7 +42,7 @@ export function WindowCard(cardProps: CardProps) {
         <hr className="h-[2px] my-2 bg-indigo-600 border-0 w-[90%] mr-auto" />
         <Typography
           as="h4"
-          className={`${defaultFont} text-left font-semibol mb-2 text-sm md:text-base lg:text-xl  text-indigo-900`}
+          className={`${defaultFont} pl-2 mr-[10%] text-left font-semibol mb-2 text-sm md:text-base lg:text-xl  text-indigo-900 bg-gradient-to-r from-blue-50 to-blue-200 `}
         >
           от {cardProps.price}р.
         </Typography>
