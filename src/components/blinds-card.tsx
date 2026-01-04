@@ -16,7 +16,7 @@ interface IBlindsCardProps {
 export default function BlindsCard(cardProps: IBlindsCardProps) {
   return (
     <div
-      className={`mt-8 p-4w-[100%] bg-white rounded-md ${defaultFont} grid grid-cols-[300px_auto] `}
+      className={`mt-8 p-4w-[100%] w-full bg-white rounded-md ${defaultFont} grid grid-cols-[300px_auto] `}
     >
       <Carousel className="rounded-md">
         <img

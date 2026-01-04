@@ -9,16 +9,26 @@ const header_text: string = "Секционные ворота и роллеты
 const bg_image_src: string = "/images/bg_rolls_gradient.png";
 const ad_image_src: string = "/images/bg_ad_rolls.png";
 
-const blinds = [
+const shutters = [
   {
-    type: "Горизонтальные жалюзи",
+    type: "Секционные ворота RSD01",
     images: [
-      "/images/blinds_hor_1.jpg",
-      "/images/blinds_hor_2.jpg",
-      "/images/blinds_hor_3.jpg",
+      "/images/rsd-01-1.jpg",
+      "/images/rsd-01-2.jpg",
+      "/images/rsd-01-3.jpg",
     ],
-    desc: "Нестареющая классика, совместимая практически с любым дизайном интерьера. Алюминиевые, деревянные, бамбуковые и кассетные. Очень большой выбор расцветок.",
-    price: "от 1655 р./кв.м.",
+    desc: "Доступные секционные ворота для небольших гаражей",
+    price: "",
+  },
+  {
+    type: "Секционные ворота RSD02",
+    images: [
+      "/images/rsd-02-1.jpg",
+      "/images/rsd-02-2.jpg",
+      "/images/rsd-02-3.jpg",
+    ],
+    desc: "Надёжные секционные ворота для больших проёмов",
+    price: "",
   },
 ];
 
@@ -30,7 +40,7 @@ export default function Rolls() {
         bgImageSrc={bg_image_src}
         adImageSrc={ad_image_src}
       />
-      {blinds.map((el) => (
+      {shutters.map((el) => (
         <BlindsCard
           type={el.type}
           images={el.images}

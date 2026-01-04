@@ -93,7 +93,7 @@ export function Navbar() {
         </Link>
 
         <ul
-          className={`ml-10 hidden items-center gap-5 lg:flex ${darkShadow} text-white`}
+          className={`ml-4 hidden items-center gap-3 lg:flex ${darkShadow} text-white`}
         >
           <NavItem href={"/"} target="_self">
             Окна
