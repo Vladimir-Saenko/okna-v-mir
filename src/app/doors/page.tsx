@@ -3,7 +3,7 @@
 //* Главная страница - Окна *//
 
 import Hero from "@/components/hero";
-// import { OurWorksGallery } from "@/components/our-works-gallery";
+import { OurWorksDoors } from "@/components/our-works-doors";
 import DoorCard from "@/components/door-card";
 import InDoorCard from "@/components/in-door-card";
 import { Typography } from "@material-tailwind/react";
@@ -265,8 +265,7 @@ export default function Doors() {
       </div>
 
       <EndPage />
-
-      {/* <OurWorksGallery /> */}
+      <OurWorksDoors />
     </>
   );
 }

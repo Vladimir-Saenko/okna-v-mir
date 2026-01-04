@@ -8,39 +8,27 @@ const lightShadow: string = "[text-shadow:_0_0_12px_rgb(255_255_255_/_0.8)]";
 
 const data = [
   {
-    imageSrc: "/images/work-1.jpg",
+    imageSrc: "/images/doors-1.jpg",
   },
   {
-    imageSrc: "/images/work-2.jpg",
+    imageSrc: "/images/doors-2.jpg",
   },
   {
-    imageSrc: "/images/work-3.jpg",
+    imageSrc: "/images/doors-3.jpg",
   },
   {
-    imageSrc: "/images/work-4.jpg",
+    imageSrc: "/images/doors-4.jpg",
   },
   {
-    imageSrc: "/images/work-5.jpg",
+    imageSrc: "/images/doors-5.jpg",
   },
   {
-    imageSrc: "/images/work-6.jpg",
-  },
-  {
-    imageSrc: "/images/work-7.jpg",
-  },
-  {
-    imageSrc: "/images/work-8.jpg",
-  },
-  {
-    imageSrc: "/images/work-9.jpg",
-  },
-  {
-    imageSrc: "/images/work-10.jpg",
+    imageSrc: "/images/doors-6.jpg",
   },
 ];
 
-export function OurWorksGallery() {
-  const [active, setActive] = React.useState("/images/work-1.jpg");
+export function OurWorksDoors() {
+  const [active, setActive] = React.useState("/images/doors-1.jpg");
 
   return (
     <div className="mt-10 mb-5 grid gap-4 ">
@@ -52,12 +40,12 @@ export function OurWorksGallery() {
       </Typography>
       <div className=" inline-block overflow-hidden ">
         <img
-          className="h-auto w-full max-w-full rounded-lg object-cover object-center md:h-[480px] transition delay-150 duration-300 ease-in-out hover:scale-110"
+          className="h-auto max-w-full mx-auto rounded-lg object-cover object-center md:h-[640px] transition delay-150 duration-300 ease-in-out hover:scale-110"
           src={active}
           alt=""
         />
       </div>
-      <div className="grid grid-cols-5 gap-4">
+      <div className="grid grid-cols-6 gap-2 mx-auto">
         {data.map(({ imageSrc }, index) => {
           return (
             <div key={index}>
