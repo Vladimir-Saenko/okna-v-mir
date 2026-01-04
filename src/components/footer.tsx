@@ -31,10 +31,12 @@ export function Footer() {
               as="p"
               className={`${defaultFont} text-gray-50 text-sm lg:text-base`}
             >
-              Наша компания предлагает Вам пластиковые конструкции{" "}
+              Наша компания предлагает Вам пластиковые и металлические
+              конструкции{" "}
               <span className="hidden lg:contents ">
                 – окна, балконы, входные и межкомнатные двери, различного рода
-                жалюзи и рулонные шторы{" "}
+                жалюзи и рулонные шторы, а также секционные ворота, рольворота и
+                рольставни,{" "}
               </span>
               c быстрой установкой{" "}
               <span className="hidden lg:contents">
@@ -79,6 +81,14 @@ export function Footer() {
                     className="cursor-pointer hover:underline hover:text-white"
                   >
                     Жалюзи
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/rolls"
+                    className="cursor-pointer hover:underline hover:text-white"
+                  >
+                    Ворота
                   </Link>
                 </li>
                 <li>

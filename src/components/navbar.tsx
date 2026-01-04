@@ -104,9 +104,9 @@ export function Navbar() {
           <NavItem href={"/blinds"} target={"_self"}>
             Жалюзи
           </NavItem>
-          {/* <NavItem href={"/shutters"} target={"_self"}>
-            Рольставни
-          </NavItem> */}
+          <NavItem href={"/rolls"} target={"_self"}>
+            Ворота
+          </NavItem>
           <NavItem href={"/about"} target={"_self"}>
             О компании
           </NavItem>
@@ -172,9 +172,9 @@ export function Navbar() {
             <NavItem href={"/blinds"} target={"_self"}>
               Жалюзи
             </NavItem>
-            {/* <NavItem href={"/shutters"} target={"_self"}>
-              Рольставни
-            </NavItem> */}
+            <NavItem href={"/rolls"} target={"_self"}>
+              Ворота
+            </NavItem>
             <NavItem href={"/about"} target={"_self"}>
               О компании
             </NavItem>
