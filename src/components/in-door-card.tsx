@@ -33,7 +33,7 @@ export default function InDoorCard(cardProps: IInDoorCardProps) {
           height={300}
           src={cardProps.imageSrc}
           alt={cardProps.modelName}
-          className="mx-auto"
+          className="mx-auto w-auto"
         />
       </div>
       <Typography

@@ -10,7 +10,8 @@ export default function About() {
             height={300}
             src={`/logos/logo-big.png`}
             alt="logo"
-            className="content-center "
+            className="content-center"
+            loading="eager"
           />
         </div>
         <div className="justify-items-start lg:justify-items-end ">

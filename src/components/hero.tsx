@@ -45,6 +45,7 @@ function Hero(heroProps: IHeroContent) {
             src={heroProps.bgImageSrc}
             alt="window"
             className="rounded-r-xl"
+            loading="eager"
           />
         </div>
       </div>

@@ -2,7 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Oswald, Play } from "next/font/google";
 import "./globals.css";
 
-import { Layout, FixedPlugin, Navbar, Footer } from "@/components";
+import { FixedPlugin, Navbar, Footer } from "@/components";
 import Providers from "./providers";
 
 const oswald = Oswald({
@@ -51,7 +51,7 @@ export default function RootLayout({
         <link rel="icon" href="/favicon.svg" />
       </head>
       <body className={`${oswald.variable} ${play.variable} antialiased`}>
-        <Layout>
+
           <Navbar />
 
           <div className="relative min-h-screen w-full bg-light-blue-50 pb-12 ">
@@ -64,7 +64,7 @@ export default function RootLayout({
 
           <Footer />
           <FixedPlugin />
-        </Layout>
+
       </body>
     </html>
   );

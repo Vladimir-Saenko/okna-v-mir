@@ -34,14 +34,14 @@ export default function DoorCard(cardProps: IDoorCardProps) {
           height={300}
           src={cardProps.outImageSrc}
           alt={cardProps.modelName}
-          className="ml-auto"
+          className="ml-auto w-auto"
         />
         <Image
           width={140}
           height={300}
           src={cardProps.inImageSrc}
           alt={cardProps.modelName}
-          className="mr-auto"
+          className="mr-auto w-auto"
         />
       </div>
       <Typography

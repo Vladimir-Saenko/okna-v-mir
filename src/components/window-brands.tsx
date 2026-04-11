@@ -18,7 +18,7 @@ export default function WindowBrands() {
             alt="ELEX"
             width={320}
             height={100}
-            className="h-[100%]  min-w-80"
+            className="h-auto min-w-80"
           />
           <Typography
             variant="h3"
@@ -72,7 +72,7 @@ export default function WindowBrands() {
             alt="REHAU"
             width={320}
             height={100}
-            className="h-[100%]  min-w-80"
+            className="min-w-80 h-auto"
           />
           <Typography
             variant="h3"

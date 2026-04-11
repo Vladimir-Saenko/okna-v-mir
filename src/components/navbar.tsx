@@ -88,7 +88,8 @@ export function Navbar() {
             height={80}
             src="/logos/logo-wide.png"
             alt="logo"
-            className="-my-[15px]"
+            className="-my-[15px] h-auto"
+            loading="eager"
           />
         </Link>
 
