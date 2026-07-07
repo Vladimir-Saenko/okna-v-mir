@@ -4,6 +4,7 @@ import "./globals.css";
 
 import { FixedPlugin, Navbar, Footer } from "@/components";
 import Providers from "./providers";
+import { YandexMetrika } from "@/components/yandex-metrika";
 
 const oswald = Oswald({
   weight: ["200", "300", "400", "500", "600", "700"],
@@ -49,21 +50,24 @@ export default function RootLayout({
           referrerPolicy="no-referrer"
         />
         <link rel="icon" href="/favicon.svg" />
+
+
       </head>
       <body className={`${oswald.variable} ${play.variable} antialiased`}>
 
-          <Navbar />
+        <YandexMetrika />
 
-          <div className="relative min-h-screen w-full bg-light-blue-50 pb-12 ">
-            <header className="grid !min-h-[30rem] bg-gradient-to-b from-blue-500 to to-light-blue-50 px-8 bg-[auto_650px] bg-no-repeat">
-              <div className="container mx-auto mt-5 grid h-full w-full grid-cols-1 place-items-center pt-14">
-                <Providers>{children}</Providers>
-              </div>
-            </header>
-          </div>
+        <Navbar />
+        <div className="relative min-h-screen w-full bg-light-blue-50 pb-12 ">
+          <header className="grid !min-h-[30rem] bg-gradient-to-b from-blue-500 to to-light-blue-50 px-8 bg-[auto_650px] bg-no-repeat">
+            <div className="container mx-auto mt-5 grid h-full w-full grid-cols-1 place-items-center pt-14">
+              <Providers>{children}</Providers>
+            </div>
+          </header>
+        </div>
 
-          <Footer />
-          <FixedPlugin />
+        <Footer />
+        <FixedPlugin />
 
       </body>
     </html>
