@@ -4,7 +4,7 @@ import { usePathname, useSearchParams } from "next/navigation";
 import { useEffect, Suspense } from "react";
 import ym, { YMInitializer } from "react-yandex-metrika";
 
-const YM_COUNTER_ID = 110466611; // ID счётчика
+const YM_COUNTER_ID = 110121740; // ID счётчика
 
 function RouterTracker() {
   const pathname = usePathname();
