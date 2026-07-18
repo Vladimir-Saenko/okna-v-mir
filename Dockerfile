@@ -13,6 +13,8 @@ COPY package*.json ./
 # Install dependencies
 RUN npm ci --force
 
+RUN mkdir node_modules/.cache && chmod -R 777 node_modules/.cache
+
 # Copy all the files
 COPY . .
 
