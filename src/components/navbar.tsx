@@ -83,12 +83,11 @@ export function Navbar() {
     >
       <div className="container mx-auto flex items-center justify-around cursor-pointer">
         <Link href={"/"}>
-          <Image
+          <img
+            className="-my-[15px] h-auto"
             width={156}
-            height={80}
             src="/logos/logo-wide.png"
             alt="logo"
-            className="-my-[15px] h-auto"
             loading="eager"
           />
         </Link>

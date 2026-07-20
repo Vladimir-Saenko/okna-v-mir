@@ -13,12 +13,11 @@ export default function WindowBrands() {
         className={`mt-8 p-4 min-h-[100px] w-[100%] bg-white rounded-md flex flex-col text-center ${defaultFont}`}
       >
         <div className="grid grid-cols-[1fr_4fr]">
-          <Image
+          <img
             src="/logos/elex_logo.png"
             alt="ELEX"
-            width={320}
-            height={100}
             className="h-auto min-w-80"
+            width={320}
           />
           <Typography
             variant="h3"
@@ -67,12 +66,11 @@ export default function WindowBrands() {
         className={`mt-8 p-4 min-h-[100px] w-[100%] bg-white rounded-md flex flex-col text-center ${defaultFont}`}
       >
         <div className="grid grid-cols-[1fr_4fr]">
-          <Image
+          <img
             src="/logos/rehau_logo.png"
             alt="REHAU"
-            width={320}
-            height={100}
             className="min-w-80 h-auto"
+            width={320}
           />
           <Typography
             variant="h3"

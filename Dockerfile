@@ -1,40 +1,42 @@
-# Use the minimal Node.js 22 image as the base image
-FROM node:22-slim AS base
-
-# Define the builder stage
-FROM node:22-slim AS builder
-
-# Set the working directory
+# 1. Этап установки зависимостей (Dependencies)
+FROM node:24-slim AS deps
 WORKDIR /app
 
-# Copy package.json and package-lock.json
-COPY package*.json ./
-
-# Install dependencies
+# Копируем package.json и package-lock.json (или yarn.lock / pnpm-lock.yaml)
+COPY package.json package-lock.json ./
 RUN npm ci --force
 
-RUN mkdir node_modules/.cache && chmod -R 777 node_modules/.cache
-
-# Copy all the files
+# 2. Этап сборки (Builder)
+FROM node:24-slim AS builder
+WORKDIR /app
+COPY --from=deps /app/node_modules ./node_modules
 COPY . .
 
-# Build the Next.js app
+# Сборка приложения (генерирует папку .next)
 RUN npm run build
 
-# Set the working directory
+# 3. Этап запуска (Runner)
+FROM node:24-slim AS runner
 WORKDIR /app
 
-# Use image for the production stage
-FROM node:22-slim AS production
+ENV NODE_ENV=production
+ENV PORT=3000
+ENV HOSTNAME="0.0.0.0"
 
-# Copy the built files from the builder stage
-COPY --from=builder /app ./
+# Не запускайте приложение от имени root-пользователя (стандарт безопасности)
+RUN addgroup --system --gid 1001 nodejs
+RUN adduser --system --uid 1001 nextjs
 
-# Install only production dependencies
-RUN npm ci --only=production
+# Копируем скомпилированное приложение и зависимости
+COPY --from=builder /app/public ./public
+COPY --from=builder --chown=nextjs:nodejs /app/.next ./.next
+COPY --from=builder /app/node_modules ./node_modules
+COPY --from=builder /app/package.json ./package.json
 
-# Expose the port the app runs on
+USER nextjs
+
 EXPOSE 3000
 
-# Start the Next.js app
+# Запуск стандартного сервера Next.js
 CMD ["npm", "start"]
+
