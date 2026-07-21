@@ -93,7 +93,7 @@ export function Navbar() {
         </Link>
 
         <ul
-          className={`ml-4 hidden items-center gap-3 lg:flex ${darkShadow} text-white`}
+          className={`ml-4 hidden items-center gap-2 lg:flex ${darkShadow} text-white`}
         >
           <NavItem href={"/"} target="_self">
             Окна
@@ -107,8 +107,11 @@ export function Navbar() {
           <NavItem href={"/rolls"} target={"_self"}>
             Ворота
           </NavItem>
+          <NavItem href={"/roof"} target={"_self"}>
+            Кровля
+          </NavItem>
           <NavItem href={"/about"} target={"_self"}>
-            О компании
+            О нас
           </NavItem>
         </ul>
 
@@ -135,12 +138,12 @@ export function Navbar() {
               </IconButton>
             </a>
             <a
-              href={`https://wa.me/${PHONE}?text=Здравствуйте!%20👋%20Меня%20интересует...`}
+              href={`https://max.ru/u/f9LHodD0cOLpHpydclhITe05e3faqDRViJQgGkGzJCPaKouu2ZzLIIAtnt0`}
               target="_blank"
             >
               <IconButton variant="text" size="sm">
                 <i
-                  className={`fa-brands fa-whatsapp text-2xl ${darkShadow} text-white`}
+                  className={`fa-solid fa-message text-2xl ${darkShadow} text-white`}
                 />
               </IconButton>
             </a>
@@ -174,6 +177,9 @@ export function Navbar() {
             </NavItem>
             <NavItem href={"/rolls"} target={"_self"}>
               Ворота
+            </NavItem>
+            <NavItem href={"/roof"} target={"_self"}>
+              Кровля и фасад
             </NavItem>
             <NavItem href={"/about"} target={"_self"}>
               О компании

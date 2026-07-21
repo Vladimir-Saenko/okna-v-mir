@@ -5,12 +5,11 @@ export default function About() {
     <div className="max-w-[850px] shadow-lg shadow-gray-600 bg-white p-8 rounded-sm">
       <div className="grid grid-cols-1 lg:grid-cols-[200px_auto] ">
         <div className="content-center hidden lg:block">
-          <Image
+          <img
             width={300}
-            height={300}
             src={`/logos/logo-big.png`}
             alt="logo"
-            className="content-center"
+            className="content-center h-auto"
             loading="eager"
           />
         </div>

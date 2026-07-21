@@ -93,6 +93,14 @@ export function Footer() {
                 </li>
                 <li>
                   <Link
+                    href="/roof"
+                    className="cursor-pointer hover:underline hover:text-white"
+                  >
+                    Кровля
+                  </Link>
+                </li>
+                <li>
+                  <Link
                     href="/about"
                     className="cursor-pointer hover:underline hover:text-white"
                   >

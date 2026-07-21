@@ -45,12 +45,12 @@ export default function EndPage() {
             </IconButton>
           </a>
           <a
-            href={`https://wa.me/${PHONE}?text=Здравствуйте!%20👋%20Меня%20интересует...`}
+            href={`https://max.ru/u/f9LHodD0cOLpHpydclhITe05e3faqDRViJQgGkGzJCPaKouu2ZzLIIAtnt0`}
             target="_blank"
             className="ml-2"
           >
             <IconButton variant="text" size="sm">
-              <i className="fa-brands fa-whatsapp text-2xl" />
+              <i className="fa-solid fa-message text-2xl" />
             </IconButton>
           </a>
         </div>
