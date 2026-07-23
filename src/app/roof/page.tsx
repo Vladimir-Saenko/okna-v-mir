@@ -1,8 +1,9 @@
 //* Кровля и фасад *//
 
 import Hero from "@/components/hero";
-// import { OurWorksGallery } from "@/components/our-works-gallery";
 import EndPage from "@/components/end-page";
+import { OurWorksRoof } from "@/components/our-works-roof";
+import RoofCard from "@/components/roof-card";
 
 const header_text: string = "Монтаж кровли и фасада";
 const bg_image_src: string = "/images/bg_roof_gradient.png";
@@ -16,7 +17,9 @@ export default function Roof() {
         bgImageSrc={bg_image_src}
         adImageSrc={ad_image_src}
       />
-      
+      <RoofCard/>
+
+      <OurWorksRoof/>
       <EndPage />
     </>
   );
